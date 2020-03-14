@@ -1,0 +1,148 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ 
+ @import "bootstrap";
+ 
+ /* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+h4{
+  margin-top:10px;
+  
+}
+
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+
+.row{
+    margin-top: 50px;
+}
+
+.center {
+  text-align: center;
+}
+
+// トップページのコンテンツ
+.top-wrapper{
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+    
+    .text-content{
+     padding-top: 60px;
+     width: 200px;
+     margin: 0 auto;
+    }
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+li {
+    margin-left: 20px;
+    a{
+      color: white;
+    }
+}
+
+// ログイン
+
+#login .container #login-row #login-column #login-box {
+  margin-top: 40px;
+  max-width: 600px;
+  height: 320px;
+  border: 1px solid #9C9C9C;
+  background-color: #EAEAEA;
+}
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+#login .container #login-row #login-column #login-box #login-form #register-link {
+  margin-top: -85px;
+}
+
+// 新規登録フォーム
+
+#signup .container #signup-row #signup-column #signup-box {
+  margin-top: 40px;
+  max-width: 600px;
+  height: 400px;
+  border: 1px solid #9C9C9C;
+  background-color: #EAEAEA;
+}
+#signup .container #signup-row #login-column #signup-box #signup-form {
+  padding: 20px;
+}
+#signup .container #signup-row #signup-column #signup-box #signup-form #register-link {
+  margin-top: -85px;
+}
+
+// パスワード変更
+
+#password .container #password-row #password-column #password-box {
+  margin-top: 40px;
+  max-width: 600px;
+  height: 250px;
+  border: 1px solid #9C9C9C;
+  background-color: #EAEAEA;
+}
+#password .container #password-row #password-column #password-box #password-form {
+  padding: 20px;
+}
+#password .container #password-row #password-column #password-box #password-form #register-link {
+  margin-top: -85px;
+}
+
+
+
