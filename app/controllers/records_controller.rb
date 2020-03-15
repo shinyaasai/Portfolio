@@ -14,7 +14,8 @@ class RecordsController < ApplicationController
   
   def create
     @record = Record.create(record_params)
-    redirect_to root_path
+    flash[:notice] = "登録しました"
+    redirect_to records_path 
   end
   
     private
