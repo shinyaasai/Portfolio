@@ -3,11 +3,6 @@
 <%= f.time_select :sleep_time%></br>
 <%= f.label :getup_time,"今日は何時に起きましたか?" %>
 <%= f.time_select :getup_time%></br>
-<%= f.label :朝日を浴びる %><br />
-<%= f.label :yes %>
-<%= f.radio_button :sun, :yes %>
-<%= f.label :no %>
-<%= f.radio_button :sun, :no %><br />
 <%= f.label :目覚め %><br />
 <%= f.label :good %>
 <%= f.radio_button :awakening, :good %>
@@ -15,10 +10,5 @@
 <%= f.radio_button :awakening, :normal %>
 <%= f.label :bad %>
 <%= f.radio_button :awakening, :bad %><br />
-<%= f.label :お薬 %><br />
-<%= f.label :飲んだ %>
-<%= f.radio_button :medicine, :飲んだ %>
-<%= f.label :飲まなかった %>
-<%= f.radio_button :medicine, :飲まなかった %><br />
 <%= f.submit "記録する", class: "btn btn-outline-dark" %>
 <% end %>
