@@ -1,7 +1,7 @@
 class RecordsController < ApplicationController
   require 'date'
   def index
-    @records = Record.all
+    @records = Record.all.search(params[:search])
   end
   
   def new
