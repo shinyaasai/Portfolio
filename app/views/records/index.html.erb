@@ -1,0 +1,31 @@
+<div class="d-flex align-items-center">
+  <h1>睡眠記録</h1>
+</div>
+<table class="table table-hover boards__table center">
+  <thead class="thead-light">
+    <tr>
+      <th>作成日</th>
+      <th>起床時間</th>
+      <th>就寝時間</th>
+      <th>睡眠時間</th>
+      <th>朝日を浴びる</th>
+      <th>目覚めの気分</th>
+      <th>睡眠薬</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @records.each do |record| %>
+      <tr>
+        <td><%= record.created_at.to_s(:date_jp) %></td>
+        <td><%= record.getup_time.to_s(:time_jp)%></td>
+        <td><%= record.sleep_time.to_s(:time_jp)%></td>
+        <td>約<%=(record.getup_time.to_i - record.sleep_time.to_i ) / 3600 %> 時間</td>
+        <td><%= record.sun %></td>
+        <td><%= record.awakening %></td>
+        <td><%= record.medicine %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
