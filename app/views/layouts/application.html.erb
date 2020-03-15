@@ -14,9 +14,8 @@
     <% else %>
     <%= render 'layouts/no_login_header' %>
     <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <div class="container">
+    <%= render 'layouts/notifications' %>
     <%= yield %>
     </div>
   </body>
