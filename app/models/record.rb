@@ -1,4 +1,5 @@
 class Record < ApplicationRecord
+  belongs_to :user
   
   enum medicine: { 飲んだ: 0, 飲まなかった: 1 }
   enum awakening: { good: 0, normal: 1, bad: 2 }  
@@ -9,5 +10,5 @@ class Record < ApplicationRecord
       else
         Record.all
       end
-    end
+  end
 end

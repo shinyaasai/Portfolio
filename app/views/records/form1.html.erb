@@ -15,6 +15,7 @@
 <h2>日中のこと</h2>
 <p>眠気は合った？</p>
 <%= form_for @record, url: records_path, metho: :post do |f| %>
+  <%= f.hidden_field :user_id %>
   <%= f.label :sun,"何時に布団に入った?" %>
   <%= f.text_field :sun%></br>
   <%= f.submit "記録する", class: "btn btn-outline-dark" %>

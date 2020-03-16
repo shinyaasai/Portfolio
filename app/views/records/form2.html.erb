@@ -1,4 +1,5 @@
 <%= form_for @record , url: form1_records_path, method: :get do |f| %>
+  <%= f. hidden_field :user_id %>
   <%= f.label :memo,"何時に目覚めた?" %>
   <%= f.text_field :memo%></br>
   <%= f.submit '次へ' %>
