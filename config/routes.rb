@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     collection do
       get 'form1'
       get 'form2'
+      get 'form3'
+      get 'form4'
       get 'done'
     end
   end

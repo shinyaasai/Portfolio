@@ -1,22 +1,21 @@
-<h2>寝る前のこと</h2>
-<p>スマホはどのくらい触った？</p>
-<P>どのくらいで眠りに落ちた？</P>
-<p>寝る前にしたことは？</p>
-<ul>
-  <li>お酒を飲んだ</li>
-  <li>カフェインを摂った</li>
-  <li>寝るための薬を飲んだ</li>
-</ul>
-<h2>夜中のこと</h2>
-<p>途中で目が覚めた？</p>
-<h2>朝のこと</h2>
-<p>どのくらいで布団出た？</p>
-<p>朝日を浴びた？</p>
-<h2>日中のこと</h2>
-<p>眠気は合った？</p>
-<%= form_for @record, url: records_path, metho: :post do |f| %>
+<label><span class="badge badge-dark form1-badge">寝た時のこと</span></label>
+<%= form_for @record , url: form2_records_path, method: :get do |f| %>
   <%= f.hidden_field :user_id %>
-  <%= f.label :sun,"何時に布団に入った?" %>
-  <%= f.text_field :sun%></br>
-  <%= f.submit "記録する", class: "btn btn-outline-dark" %>
+  <div class= "form1-label">
+  <%= f.label :memo,"何時に布団に入った?", class: "text-secondary" %><br>
+  <%= f.text_field :memo%></br>
+  </div>
+  <div class= "form1-label">
+  <%= f.label :memo,"寝る前にしたことある？", class: "text-secondary" %><br>
+  <%= f.text_field :memo%></br>
+  </div>
+  <label><span class="badge badge-dark form1-badge">夜中のこと</span></label>
+  <div class= "form1-label">
+  <%= f.label :memo,"途中で目が覚めた?", class: "text-secondary" %><br>
+  <%= f.text_field :memo%></br>
+  </div>
+  
+  <div class="text-center">
+  <%= f.submit '次へ', class: "btn btn-outline-dark w-150px" %>
+  </div>
 <% end %>

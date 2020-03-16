@@ -1,0 +1,11 @@
+<label><span class="badge badge-warning form3-badge">日中のこと</span></label>
+<%= form_for @record , url: form4_records_path, method: :get do |f| %>
+  <%= f. hidden_field :user_id %>
+  <div class= "form3-label">
+  <%= f.label :memo,"元気に過ごせた?", class: "text-warning" %><br>
+  <%= f.text_field :memo%></br>
+  </div>
+  <div class="text-center">
+  <%= f.submit '次へ', class: "btn btn-outline-dark w-150px" %>
+  </div>
+<% end %>

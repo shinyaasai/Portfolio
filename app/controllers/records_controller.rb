@@ -4,16 +4,23 @@ class RecordsController < ApplicationController
   def done
     @records = Record.where(user_id: current_user.id).all.search(params[:search])
   end
-  
+    
   def form1
+    @record = Record.new(user_id: current_user.id)
+  end
+  def form3
     session[:memo] = record_params[:memo]
     @record = Record.new(user_id: current_user.id)
   end
-  
-  def form2
+  def form4
+    session[:memo] = record_params[:memo]
     @record = Record.new(user_id: current_user.id)
   end
-  
+  def form2
+    session[:memo] = record_params[:memo]
+    @record = Record.new(user_id: current_user.id)
+  end
+
   def show
     @record = Record.find(params[:id])
   end

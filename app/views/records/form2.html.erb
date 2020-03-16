@@ -1,6 +1,20 @@
-<%= form_for @record , url: form1_records_path, method: :get do |f| %>
+<label><span class="badge badge-primary form2-badge">朝のこと</span></label>
+<%= form_for @record , url: form3_records_path, method: :get do |f| %>
   <%= f. hidden_field :user_id %>
-  <%= f.label :memo,"何時に目覚めた?" %>
+  <div class= "form2-label">
+  <%= f.label :memo,"何時に目覚めた?" %><br>
   <%= f.text_field :memo%></br>
-  <%= f.submit '次へ' %>
+  </div>
+  <div class= "form2-label">
+  <%= f.label :memo,"どのくらいで布団から出た?" %><br>
+  <%= f.text_field :memo%></br>
+  </div>
+  <div class= "form2-label">
+  <%= f.label :memo,"朝日を浴びた?" %><br>
+  <%= f.text_field :memo%></br>
+  </div>
+  
+  <div class="text-center">
+  <%= f.submit '次へ', class: "btn btn-outline-dark w-150px" %>
+  </div>
 <% end %>
