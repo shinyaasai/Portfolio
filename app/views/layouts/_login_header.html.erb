@@ -3,9 +3,9 @@
     <%= link_to Time.current.to_s(:datetime_jp), "/", id:"logo" %>
     <div class="nav">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "記録する", new_record_path%></li>
+        <li><%= link_to "記録する", form2_records_path%></li>
         <li><%= link_to "アカウント編集", edit_user_registration_path%></li>
-        <li><%= link_to "一覧", records_path%></li>
+        <li><%= link_to "一覧", done_records_path%></li>
         <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
       </ul>
     </div>
