@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   require "date"
   
   def after_sign_in_path_for(resource)
-    new_record_path
+    form2_records_path
   end
 
   def after_sign_out_path_for(resource)

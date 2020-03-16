@@ -21,6 +21,7 @@
       <th>就寝時間</th>
       <th>睡眠時間</th>
       <th>目覚めの気分</th>
+      <th>sun</th>
       <th></th>
     </tr>
   </thead>
@@ -29,10 +30,11 @@
     <% @records.each do |record| %>
       <tr>
         <td><%= record.created_at.to_s(:date_jp) %></td>
-        <td><%= record.getup_time.to_s(:time_jp)%></td>
-        <td><%= record.sleep_time.to_s(:time_jp)%></td>
+        <td><%= record.getup_time%></td>
+        <td><%= record.sleep_time%></td>
         <td>約<%=(record.getup_time.to_i -  record.sleep_time.to_i  ) / 3600 %> 時間</td>
-        <td><%= record.awakening %></td>
+        <td><%= record.memo %></td>
+        <td><%= record.sun %></td>
       </tr>
     <% end %>
   </tbody>

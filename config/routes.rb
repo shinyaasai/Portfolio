@@ -5,5 +5,11 @@ Rails.application.routes.draw do
   } 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'statics_pages#home'
-  resources :records
+  resources :records do 
+    collection do
+      get 'form1'
+      get 'form2'
+      get 'done'
+    end
+  end
 end
