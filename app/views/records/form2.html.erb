@@ -6,12 +6,16 @@
   <%= f.text_field :memo%></br>
   </div>
   <div class= "form2-label">
-  <%= f.label :memo,"どのくらいで布団から出た?" %><br>
-  <%= f.text_field :memo%></br>
+  <%= f.label :getout,"どのくらいで布団から出た？", class: "text-secondary" %><br>
+  <%= f.select :getout, options_for_select({１０分: "１０分", ２０分: "２０分" ,
+                                            ３０分: "３０分", ４０分: "４０分", 
+                                            ５０分: "５０分", ６０分: "６０分", 
+                                            ６０分以上: "６０分以上"}), 
+                                            include_blank: true %></br>
   </div>
   <div class= "form2-label">
-  <%= f.label :memo,"朝日を浴びた?" %><br>
-  <%= f.text_field :memo%></br>
+  <%= f.label :sun,"朝日を浴びた？", class: "text-secondary" %><br>
+  <%= f.select :sun, options_for_select({浴びた: "浴びた", 浴びていない: "浴びていない"}), include_blank: true %></br>
   </div>
   
   <div class="text-center">

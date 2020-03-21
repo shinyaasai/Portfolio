@@ -9,15 +9,18 @@ class RecordsController < ApplicationController
     @record = Record.new(user_id: current_user.id)
   end
   def form3
-    session[:memo] = record_params[:memo]
+    session[:getout] = record_params[:getout]
+    session[:sun] = record_params[:sun]
     @record = Record.new(user_id: current_user.id)
   end
   def form4
-    session[:memo] = record_params[:memo]
+    session[:sleepiness] = record_params[:sleepiness]
     @record = Record.new(user_id: current_user.id)
   end
   def form2
     session[:memo] = record_params[:memo]
+    session[:medicine] = record_params[:medicine]
+    session[:awakening] = record_params[:awakening]
     @record = Record.new(user_id: current_user.id)
   end
 
@@ -26,12 +29,16 @@ class RecordsController < ApplicationController
   end
   
   def create
-    
     @record = Record.new(
+                      user_id: session[:user_id],
                       memo: session[:memo],
-                      sun: record_params[:sun],
-                      user_id: session[:user_id]
-                      )
+                      medicine: session[:medicine],
+                      awakening: session[:awakening],
+                      sun: session[:sun],
+                      getout: session[:getout],
+                      sleepiness: session[:sleepiness],
+                      memo: record_params[:memo]
+                    )
     @record.user_id = current_user.id                  
     @record.save                  
     flash[:notice] = "登録しました"
@@ -41,7 +48,7 @@ class RecordsController < ApplicationController
     private
    
     def record_params
-      params.require(:record).permit(:getup_time, :sleep_time, :memo, :sun, :user_id)
+      params.require(:record).permit(:getup_time, :sleep_time, :memo, :sun, :getout, :sleepiness, :medicine, :awakening, :user_id)
     end
     
     

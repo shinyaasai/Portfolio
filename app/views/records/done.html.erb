@@ -20,8 +20,8 @@
       <th>起床時間</th>
       <th>就寝時間</th>
       <th>睡眠時間</th>
-      <th>目覚めの気分</th>
-      <th>sun</th>
+      <th>夜中に目が覚めた</th>
+      <th>薬を飲んだ</th>
       <th></th>
     </tr>
   </thead>
@@ -33,8 +33,8 @@
         <td><%= record.getup_time%></td>
         <td><%= record.sleep_time%></td>
         <td>約<%=(record.getup_time.to_i -  record.sleep_time.to_i  ) / 3600 %> 時間</td>
-        <td><%= record.memo %></td>
-        <td><%= record.sun %></td>
+        <td><%= record.awakening %></td>
+        <td><%= record.medicine %></td>
       </tr>
     <% end %>
   </tbody>

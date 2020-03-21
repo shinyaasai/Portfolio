@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200316103156) do
+ActiveRecord::Schema.define(version: 20200321031434) do
 
   create_table "records", force: :cascade do |t|
     t.time "getup_time"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20200316103156) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.integer "getout"
+    t.integer "sleepiness"
     t.index ["user_id"], name: "index_records_on_user_id"
   end
 

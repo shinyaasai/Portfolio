@@ -6,13 +6,13 @@
   <%= f.text_field :memo%></br>
   </div>
   <div class= "form1-label">
-  <%= f.label :memo,"寝る前にしたことある？", class: "text-secondary" %><br>
-  <%= f.text_field :memo%></br>
+  <%= f.label :medicine,"寝るための薬は飲みましたか？", class: "text-secondary" %><br>
+  <%= f.select :medicine, options_for_select({飲んだ: "飲んだ", 飲んでいない: "飲んでいない"}), include_blank: true %></br>
   </div>
   <label><span class="badge badge-dark form1-badge">夜中のこと</span></label>
   <div class= "form1-label">
-  <%= f.label :memo,"途中で目が覚めた?", class: "text-secondary" %><br>
-  <%= f.text_field :memo%></br>
+  <%= f.label :awakening,"途中で目が覚めた?", class: "text-secondary" %><br>
+  <%= f.select :awakening, options_for_select({起きた: "起きた" , 起きていない: "起きていない"}), include_blank: true %></br>
   </div>
   
   <div class="text-center">
