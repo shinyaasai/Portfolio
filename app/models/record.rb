@@ -1,4 +1,5 @@
 class Record < ApplicationRecord
+  require 'date'
   belongs_to :user
   
   enum medicine:  { 飲んだ: 1, 飲んでいない: 2  }

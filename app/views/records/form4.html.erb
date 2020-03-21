@@ -1,8 +1,8 @@
-<label><span class="badge badge-success form4-badge">1日を通じて</span></label>
+<label><span class="badge badge-info form4-badge">1日を通じて</span></label>
 <%= form_for @record, url: records_path, metho: :post do |f| %>
   <%= f. hidden_field :user_id %>
   <div class= "form4-label">
-  <%= f.label :memo,"思ったことをメモ", class: "text-success" %><br>
+  <%= f.label :memo,"思ったことをメモ", class: "text-info" %><br>
   <%= f.text_area :memo%></br>
   </div>
   <div class="text-center">

@@ -9,7 +9,11 @@ class RecordsController < ApplicationController
     @record = Record.new(user_id: current_user.id)
   end
   def form3
-    session[:getout] = record_params[:getout]
+    session["getup_time(1i)"] = record_params["getup_time(1i)"]
+    session["getup_time(2i)"] = record_params["getup_time(2i)"]
+    session["getup_time(3i)"] = record_params["getup_time(3i)"]
+    session["getup_time(4i)"] = record_params["getup_time(4i)"]
+    session["getup_time(5i)"] = record_params["getup_time(5i)"]
     session[:sun] = record_params[:sun]
     @record = Record.new(user_id: current_user.id)
   end
@@ -18,7 +22,11 @@ class RecordsController < ApplicationController
     @record = Record.new(user_id: current_user.id)
   end
   def form2
-    session[:memo] = record_params[:memo]
+    session["sleep_time(1i)"] = record_params["sleep_time(1i)"]
+    session["sleep_time(2i)"] = record_params["sleep_time(2i)"]
+    session["sleep_time(3i)"] = record_params["sleep_time(3i)"]
+    session["sleep_time(4i)"] = record_params["sleep_time(4i)"]
+    session["sleep_time(5i)"] = record_params["sleep_time(5i)"]
     session[:medicine] = record_params[:medicine]
     session[:awakening] = record_params[:awakening]
     @record = Record.new(user_id: current_user.id)
@@ -31,7 +39,16 @@ class RecordsController < ApplicationController
   def create
     @record = Record.new(
                       user_id: session[:user_id],
-                      memo: session[:memo],
+                      "getup_time(1i)": session["getup_time(1i)"],
+                      "getup_time(2i)": session["getup_time(2i)"],
+                      "getup_time(3i)": session["getup_time(3i)"],
+                      "getup_time(4i)": session["getup_time(4i)"],
+                      "getup_time(5i)": session["getup_time(5i)"],
+                      "sleep_time(1i)": session["sleep_time(1i)"],
+                      "sleep_time(2i)": session["sleep_time(2i)"],
+                      "sleep_time(3i)": session["sleep_time(3i)"],
+                      "sleep_time(4i)": session["sleep_time(4i)"],
+                      "sleep_time(5i)": session["sleep_time(5i)"],
                       medicine: session[:medicine],
                       awakening: session[:awakening],
                       sun: session[:sun],
@@ -48,8 +65,14 @@ class RecordsController < ApplicationController
     private
    
     def record_params
-      params.require(:record).permit(:getup_time, :sleep_time, :memo, :sun, :getout, :sleepiness, :medicine, :awakening, :user_id)
+      params.require(:record).permit( :'getup_time(1i)',:'getup_time(2i)',
+                                      :'getup_time(3i)',:'getup_time(4i)',
+                                      :'getup_time(5i)',
+                                      :'sleep_time(1i)', :'sleep_time(2i)',
+                                      :'sleep_time(3i)', :'sleep_time(4i)',
+                                      :'sleep_time(5i)',
+                                      :memo, :sun, :getout, :sleepiness,
+                                      :medicine, :awakening, :user_id
+                                     )
     end
-    
-    
 end

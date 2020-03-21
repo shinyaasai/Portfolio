@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200321031434) do
+ActiveRecord::Schema.define(version: 20200321061422) do
 
   create_table "records", force: :cascade do |t|
-    t.time "getup_time"
-    t.time "sleep_time"
+    t.datetime "getup_time"
+    t.datetime "sleep_time"
     t.integer "awakening"
     t.integer "medicine"
     t.integer "sun"
