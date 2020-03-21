@@ -75,4 +75,9 @@ class RecordsController < ApplicationController
                                       :medicine, :awakening, :user_id
                                      )
     end
+    
+    def sleep_avarage
+       @sleep_avarage = Record.find(params[:id])
+       @sleer_avarage = (Record.getup_time.to_i - Record.sleep_time.to_i) / 3600
+    end
 end

@@ -17,8 +17,8 @@
   <thead class="thead-light">
     <tr>
       <th>作成日</th>
-      <th>起床時間</th>
       <th>就寝時間</th>
+      <th>起床時間</th>
       <th>睡眠時間</th>
       <th>夜中に目が覚めた</th>
       <th>薬を飲んだ</th>
@@ -30,9 +30,9 @@
     <% @records.each do |record| %>
       <tr>
         <td><%= record.created_at.to_s(:date_jp) %></td>
-        <td><%= record.getup_time%></td>
-        <td><%= record.sleep_time%></td>
-        <td>約<%=(record.getup_time.to_i -  record.sleep_time.to_i  ) / 3600 %> 時間</td>
+        <td><%= record.sleep_time.to_s(:datetime_jp)%></td>
+        <td><%= record.getup_time.to_s(:datetime_jp)%></td>
+        <td>約<%=(( record.getup_time -  record.sleep_time) / 3600).to_f.floor(1) %> 時間</td>
         <td><%= record.awakening %></td>
         <td><%= record.medicine %></td>
       </tr>
