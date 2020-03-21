@@ -14,6 +14,7 @@ class RecordsController < ApplicationController
     session["getup_time(3i)"] = record_params["getup_time(3i)"]
     session["getup_time(4i)"] = record_params["getup_time(4i)"]
     session["getup_time(5i)"] = record_params["getup_time(5i)"]
+    session[:getout] = record_params[:getout]
     session[:sun] = record_params[:sun]
     @record = Record.new(user_id: current_user.id)
   end
@@ -33,6 +34,7 @@ class RecordsController < ApplicationController
   end
 
   def show
+    @records = Record.all
     @record = Record.find(params[:id])
   end
   
@@ -57,9 +59,12 @@ class RecordsController < ApplicationController
                       memo: record_params[:memo]
                     )
     @record.user_id = current_user.id                  
-    @record.save                  
+    if @record.save                  
     flash[:notice] = "登録しました"
     redirect_to done_records_path
+    else
+      redirect_to done_records_path
+    end
   end
   
     private
@@ -74,10 +79,5 @@ class RecordsController < ApplicationController
                                       :memo, :sun, :getout, :sleepiness,
                                       :medicine, :awakening, :user_id
                                      )
-    end
-    
-    def sleep_avarage
-       @sleep_avarage = Record.find(params[:id])
-       @sleer_avarage = (Record.getup_time.to_i - Record.sleep_time.to_i) / 3600
     end
 end
