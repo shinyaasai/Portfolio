@@ -4,38 +4,80 @@ class RecordsController < ApplicationController
   def done
     @records = Record.where(user_id: current_user.id).all.search(params[:search])
   end
-  
+    
   def form1
-    session[:memo] = record_params[:memo]
     @record = Record.new(user_id: current_user.id)
   end
-  
+  def form3
+    session["getup_time(1i)"] = record_params["getup_time(1i)"]
+    session["getup_time(2i)"] = record_params["getup_time(2i)"]
+    session["getup_time(3i)"] = record_params["getup_time(3i)"]
+    session["getup_time(4i)"] = record_params["getup_time(4i)"]
+    session["getup_time(5i)"] = record_params["getup_time(5i)"]
+    session[:getout] = record_params[:getout]
+    session[:sun] = record_params[:sun]
+    @record = Record.new(user_id: current_user.id)
+  end
+  def form4
+    session[:sleepiness] = record_params[:sleepiness]
+    @record = Record.new(user_id: current_user.id)
+  end
   def form2
+    session["sleep_time(1i)"] = record_params["sleep_time(1i)"]
+    session["sleep_time(2i)"] = record_params["sleep_time(2i)"]
+    session["sleep_time(3i)"] = record_params["sleep_time(3i)"]
+    session["sleep_time(4i)"] = record_params["sleep_time(4i)"]
+    session["sleep_time(5i)"] = record_params["sleep_time(5i)"]
+    session[:medicine] = record_params[:medicine]
+    session[:awakening] = record_params[:awakening]
     @record = Record.new(user_id: current_user.id)
   end
-  
+
   def show
+    @records = Record.all
     @record = Record.find(params[:id])
   end
   
   def create
-    
     @record = Record.new(
-                      memo: session[:memo],
-                      sun: record_params[:sun],
-                      user_id: session[:user_id]
-                      )
+                      user_id: session[:user_id],
+                      "getup_time(1i)": session["getup_time(1i)"],
+                      "getup_time(2i)": session["getup_time(2i)"],
+                      "getup_time(3i)": session["getup_time(3i)"],
+                      "getup_time(4i)": session["getup_time(4i)"],
+                      "getup_time(5i)": session["getup_time(5i)"],
+                      "sleep_time(1i)": session["sleep_time(1i)"],
+                      "sleep_time(2i)": session["sleep_time(2i)"],
+                      "sleep_time(3i)": session["sleep_time(3i)"],
+                      "sleep_time(4i)": session["sleep_time(4i)"],
+                      "sleep_time(5i)": session["sleep_time(5i)"],
+                      medicine: session[:medicine],
+                      awakening: session[:awakening],
+                      sun: session[:sun],
+                      getout: session[:getout],
+                      sleepiness: session[:sleepiness],
+                      memo: record_params[:memo]
+                    )
     @record.user_id = current_user.id                  
-    @record.save                  
+    if @record.save                  
     flash[:notice] = "登録しました"
     redirect_to done_records_path
+    else
+      redirect_to done_records_path
+    end
   end
   
     private
    
     def record_params
-      params.require(:record).permit(:getup_time, :sleep_time, :memo, :sun, :user_id)
+      params.require(:record).permit( :'getup_time(1i)',:'getup_time(2i)',
+                                      :'getup_time(3i)',:'getup_time(4i)',
+                                      :'getup_time(5i)',
+                                      :'sleep_time(1i)', :'sleep_time(2i)',
+                                      :'sleep_time(3i)', :'sleep_time(4i)',
+                                      :'sleep_time(5i)',
+                                      :memo, :sun, :getout, :sleepiness,
+                                      :medicine, :awakening, :user_id
+                                     )
     end
-    
-    
 end

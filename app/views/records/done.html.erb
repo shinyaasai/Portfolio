@@ -16,25 +16,18 @@
 <table class="table table-hover boards__table center">
   <thead class="thead-light">
     <tr>
-      <th>作成日</th>
-      <th>起床時間</th>
-      <th>就寝時間</th>
+      <th>日付</th>
       <th>睡眠時間</th>
-      <th>目覚めの気分</th>
-      <th>sun</th>
-      <th></th>
+      <th>詳細</th>
     </tr>
   </thead>
 
   <tbody>
     <% @records.each do |record| %>
       <tr>
-        <td><%= record.created_at.to_s(:date_jp) %></td>
-        <td><%= record.getup_time%></td>
-        <td><%= record.sleep_time%></td>
-        <td>約<%=(record.getup_time.to_i -  record.sleep_time.to_i  ) / 3600 %> 時間</td>
-        <td><%= record.memo %></td>
-        <td><%= record.sun %></td>
+        <td><%= record.sleep_time.to_s(:date_jp) %>〜<%= record.getup_time.to_s(:date_jp)%></td>
+        <td>約<%=(( record.getup_time -  record.sleep_time) / 3600).to_f.floor(1) %> 時間</td>
+        <td><%= link_to "詳細", record , class: "btn btn-primary" %></td>
       </tr>
     <% end %>
   </tbody>
