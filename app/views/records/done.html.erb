@@ -10,13 +10,14 @@
 
 
 
-<div class="d-flex align-items-center">
+<div class="record d-flex align-items-center">
   <h1>睡眠記録</h1>
 </div>
+<div clas="table-responsive">
 <table class="table table-hover boards__table center">
-  <thead class="thead-light">
+  <thead>
     <tr>
-      <th>日付</th>
+      <th>記録をした日</th>
       <th>睡眠時間</th>
       <th>詳細</th>
     </tr>
@@ -25,10 +26,12 @@
   <tbody>
     <% @records.each do |record| %>
       <tr>
-        <td><%= record.sleep_time.to_s(:date_jp) %>〜<%= record.getup_time.to_s(:date_jp)%></td>
-        <td>約<%=(( record.getup_time -  record.sleep_time) / 3600).to_f.floor(1) %> 時間</td>
+        <td><%= record.sleep_time.to_s(:date_jp) %>〜</br><%= record.getup_time.to_s(:date_jp)%></td>
+        <td><%=(( record.getup_time -  record.sleep_time) / 3600).to_f.floor(1) %> 時間</td>
         <td><%= link_to "詳細", record , class: "btn btn-primary" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
+<%= paginate @records %>

@@ -1,30 +1,33 @@
-<div class="d-flex align-items-center">
-  <h1>睡眠記録</h1>
-</div>
-<table class="table table-hover boards__table center">
-  <thead class="thead-light">
-    <tr>
-      <th>就寝時間</th>
-      <th>起床時間</th>
-      <th>薬を飲んだ</th>
-      <th>夜中に目が覚めた</th>
-      <th>布団から出るまで</th>
-      <th>朝日を浴びた</th>
-      <th>日中の眠気</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @records.each do |record| %>
-      <tr>
-        <td><%= record.sleep_time.to_s(:datetime_jp)%></td>
-        <td><%= record.getup_time.to_s(:datetime_jp)%></td>
-        <td><%= record.medicine %></td>
-        <td><%= record.awakening %></td>
-        <td><%= record.getout %></td>
-        <td><%= record.sun %></td>
-　　　　<td><%= record.sleepiness %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<h1 class="show-title">
+<%= @record.sleep_time.to_s(:date_jp) %><%= @record.getup_time.to_s(:date_jp)%>の記録
+</h1>
+<table class="table center">
+  <tr>
+    <th>就寝時間</th>
+    <td><%= @record.sleep_time.to_s(:datetime_jp)%></td>
+  </tr> 
+  <tr>
+    <th>起床時間</th>
+    <td><%= @record.getup_time.to_s(:datetime_jp)%></td>
+  </tr>  
+  <tr>
+    <th>薬を飲んだ</th>
+     <td><%= @record.medicine %></td>
+   </tr>   
+   <tr>
+     <th>夜中に目が覚めた</th>
+    <td><%= @record.awakening %></td>
+  </tr>   
+  <tr>
+    <th>布団から出るまで</th>
+    <td><%= @record.getout %></td>
+  </tr>   
+  <tr>
+    <th>朝日を浴びた</th>
+    <td><%= @record.sun %></td>
+   </tr>   
+   <tr>
+     <th>日中の眠気</th>
+   　<td><%= @record.sleepiness %></td>
+   </tr> 
 </table>
