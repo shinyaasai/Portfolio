@@ -2,7 +2,7 @@ class RecordsController < ApplicationController
   require 'date'
   before_action :authenticate_user!
   def done
-    @records = Record.where(user_id: current_user.id).all.search(params[:search])
+    @records = Record.where(user_id: current_user.id).page(params[:page]).search(params[:search])
   end
     
   def form1
@@ -34,7 +34,6 @@ class RecordsController < ApplicationController
   end
 
   def show
-    @records = Record.all
     @record = Record.find(params[:id])
   end
   

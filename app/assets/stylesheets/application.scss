@@ -15,7 +15,9 @@
  */
  
  @import "bootstrap";
- 
+ @import 'font-awesome-sprockets';
+ @import 'font-awesome';
+ @import url('https://fonts.googleapis.com/css?family=M+PLUS+1p');
  /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -25,8 +27,10 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
-  margin-bottom: 30px;
+  margin: 30px 0 120px 0;
   text-align: center;
+  color: #FFF;
+	text-shadow: 0 0 10px #0000ff,0 0 15px #fff;
 }
 
 h2 {
@@ -34,18 +38,57 @@ h2 {
   letter-spacing: -1px;
   margin-bottom: 20px;
   font-weight: normal;
-  color: #777;
+  color: #FFF;
+  text-shadow: 0 0 5px #01033e,0 0 10px #fff;
+}
+
+h3{
+  color: #FFF;
+  text-shadow: 0 0 5px #01033e,0 0 10px #fff;
 }
 
 h4{
-  margin-top:10px;
+  font-size: 1.1em;
+  line-height: 1.7em;
+  color: #FFF;
+  text-shadow: 0 0 5px #01033e,0 0 10px #fff;
+  margin-top: 200px;
   
+}
+
+i {
+  color: #FFF;
+}
+
+em{
+  color: #FFF;
 }
 
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+  color: #FFF;
+  text-align: center;
+  margin-top: 30px;
+  text-shadow: 0 0 5px #01033e,0 0 10px #fff;
+  
+}
+
+a{
+  color: #FFF;
+}
+
+label{
+  color: #FFF;
+}
+
+.btn{
+  background-color: #000016;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0px 0px 2px;
 }
 
 
@@ -57,6 +100,18 @@ p {
   text-align: center;
 }
 
+body{
+  background-image: url("/images/hoshizora.png");
+  background-size: cover;
+  font-family: 'M PLUS 1p', sans-serif;
+}
+
+// ラベルテキスト
+.label-text{
+  color: #FFF;
+  text-shadow: 0 0 5px #01033e,0 0 10px #fff;
+}
+
 // トップページのコンテンツ
 .top-wrapper{
     width: 250px;
@@ -64,6 +119,7 @@ p {
     text-align: center;
     align-items: center;
     margin: 0 auto;
+    background: #FFF;
     
     .text-content{
      padding-top: 60px;
@@ -73,6 +129,13 @@ p {
 }
 
 /* header */
+
+header {
+  background: #00001d;
+  text-shadow: 0 0 5px #01033e,0 0 10px #fff;
+  box-shadow: 0px 3px 10px -3px  #FFF;
+  font-family: 'M PLUS 1p', sans-serif;
+}
 
 #logo {
   float: left;
@@ -90,9 +153,19 @@ p {
 
 li {
     margin-left: 20px;
+    color: red;
     a{
-      color: white;
+      color: #FFF;
     }
+}
+
+.btn-top{
+  background-color: #000016;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px;
+  margin: 0 5px 0 5px;
 }
 
 // ログイン
@@ -102,7 +175,7 @@ li {
   max-width: 600px;
   height: 320px;
   border: 1px solid #9C9C9C;
-  background-color: #EAEAEA;
+  background-color: #092b61;
 }
 #login .container #login-row #login-column #login-box #login-form {
   padding: 20px;
@@ -118,7 +191,7 @@ li {
   max-width: 600px;
   height: 400px;
   border: 1px solid #9C9C9C;
-  background-color: #EAEAEA;
+  background-color: #092b61;
 }
 #signup .container #signup-row #login-column #signup-box #signup-form {
   padding: 20px;
@@ -146,15 +219,19 @@ li {
 
 // 入力フォーム１
 .form1-badge{
+  background: #052657;
   margin-top: 30px;
   padding: 10px 50px;
   font-size: 3em;
   letter-spacing: -2px;
+  color: #FFF;
+  box-shadow: 0px 0px 5px;
+  text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
 }
 
 .form1-label{
   font-size: 2.0rem;
-  color: #000;
+  color: #FFF;
   font-weight: bold;
 }
 
@@ -168,10 +245,14 @@ li {
 
 // 入力フォーム2
 .form2-badge{
+  color: #FFF;
+  background: #052657;
   margin-top: 30px;
   padding: 10px 50px;
   font-size: 3em;
   letter-spacing: -2px;
+  box-shadow: 0px 0px 5px;
+  text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
 }
 
 .form2-label{
@@ -190,11 +271,14 @@ li {
 
 // 入力フォーム3
 .form3-badge{
+  color: #FFF;
+  background: #052657;
   margin-top: 30px;
   padding: 10px 50px;
   font-size: 3em;
   letter-spacing: -2px;
-  color: white;
+  box-shadow: 0px 0px 5px;
+  text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
 }
 
 .form3-label{
@@ -203,20 +287,16 @@ li {
   font-weight: bold;
 }
 
-.w-150px{
-  font-size: 20px;
-  font-weight: bold;
-  width: 600px;
-  padding: 20px 40px;
-  margin-top: 40px;
-}
-
 // 入力フォーム4
 .form4-badge{
+  color: #FFF;
+  background: #052657;
   margin-top: 30px;
   padding: 10px 50px;
   font-size: 3em;
   letter-spacing: -2px;
+  box-shadow: 0px 0px 5px;
+  text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
 }
 
 .form4-label{
@@ -252,6 +332,63 @@ select {
 	border: none;
 	background-size: 12px 10px;
 	background-position: right 10px center;
-	background-color: #bddfff;
+	background-color: #bed8f1;
 }
+
+// 入力フォームボタン
+
+.btn-next.w-150px{
+  font-size: 20px;
+  width: 600px;
+  padding: 20px 40px;
+  margin-top: 40px;
+  background-color: #000016;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px;
+}
+
+// ラベルアイコン
+
+label{
+  span{
+    i{
+      padding-right: 20px;
+    }
+  }
+}
+
+// 一覧ページ
+.record{
+  h1{
+    margin: 30px 0 30px 0;
+  }
+}
+
+.table{
+  th{
+    color: #FFF;
+	  text-shadow: 0 0 5px #01033e,0 0 10px #fff;
+	  background: rgba(5,19,75,0.7);
+  }
+  td{
+    color: #FFF;
+    padding: 10px 0 10px 0;
+    font-size: 1.5rem;
+    background: rgba(5,33,75,0.7);
+    font-weight: bold;
+  }
+}
+
+// 詳細ページ
+.show-title{
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin: 30px 0 30px 0;
+  text-align: center;
+  color: #FFF;
+	text-shadow: 0 0 10px #0000ff,0 0 15px #fff;
+}
+
 

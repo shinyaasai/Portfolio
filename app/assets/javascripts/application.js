@@ -15,3 +15,12 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+
+// タイトル
+
+$(document).ready(function() {
+  
+$('#title').css('display', 'none').fadeIn(5000);
+
+});
+

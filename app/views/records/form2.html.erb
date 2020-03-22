@@ -1,12 +1,12 @@
-<label><span class="badge badge-info form2-badge">朝のこと</span></label>
+<label><span class="badge form2-badge"><i class="far fa-sun"></i>朝のこと</span></label>
 <%= form_for @record , url: form3_records_path, method: :get do |f| %>
   <%= f. hidden_field :user_id %>
   <div class= "form2-label">
-  <%= f.label :getup_time,"何時に起きた?", class: "col-sm-4 control-label text-info" %><br>
+  <%= f.label :getup_time,"何時に起きた?", class: "col-sm-4 control-label label-text" %><br>
   <%= f.datetime_select :getup_time,discard_year:true, class: "form-control form-control-inline"%></br>
   </div>
   <div class= "form2-label">
-  <%= f.label :getout,"どのくらいで布団から出た？", class: "text-info" %><br>
+  <%= f.label :getout,"どのくらいで布団から出た？", class: "label-text" %><br>
   <%= f.select :getout, options_for_select({１０分: "１０分", ２０分: "２０分" ,
                                             ３０分: "３０分", ４０分: "４０分", 
                                             ５０分: "５０分", ６０分: "６０分", 
@@ -14,11 +14,11 @@
                                             include_blank: true %></br>
   </div>
   <div class= "form2-label">
-  <%= f.label :sun,"朝日を浴びた？", class: "text-info" %><br>
+  <%= f.label :sun,"朝日を浴びた？", class: "label-text" %><br>
   <%= f.select :sun, options_for_select({浴びた: "浴びた", 浴びていない: "浴びていない"}), include_blank: true %></br>
   </div>
   
   <div class="text-center">
-  <%= f.submit '次へ', class: "btn btn-outline-dark w-150px" %>
+  <%= f.submit '次へ', class: "btn btn-outline-dark btn-next w-150px" %>
   </div>
 <% end %>

@@ -1,12 +1,24 @@
-<header class="navbar navbar-fixed-top bg-info navbar-expand-sm">
+<header class="navbar navbar-fixed-top  navbar-expand-sm">
   <div class="container">
-    <%= link_to Time.current.to_s(:datetime_jp), "/", id:"logo" %>
+    <%= link_to Time.current.to_s(:datetime_jp), "/", id:"logo"%>
     <div class="nav">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "記録する", form1_records_path%></li>
-        <li><%= link_to "アカウント編集", edit_user_registration_path%></li>
-        <li><%= link_to "一覧", done_records_path%></li>
-        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to form1_records_path do %>
+            <i class="far fa-edit fa-2x"></i>
+            <% end %>
+        </li>
+        <li><%= link_to done_records_path do %>
+            <i class="far fa-list-alt fa-2x"></i>
+            <% end %>
+        </li>
+        <li><%= link_to edit_user_registration_path do%>
+            <i class="far fa-user fa-2x"></i>
+            <% end %>
+        </li>
+        <li><%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fas fa-sign-out-alt fa-2x"></i>
+            <% end %>
+        </li>
       </ul>
     </div>
   </div>
