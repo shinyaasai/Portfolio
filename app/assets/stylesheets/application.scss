@@ -15,7 +15,7 @@
  */
  
  @import "bootstrap";
- 
+ @import url('https://fonts.googleapis.com/css?family=M+PLUS+1p');
  /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -25,8 +25,10 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
-  margin-bottom: 30px;
+  margin: 30px 0 120px 0;
   text-align: center;
+  color: #FFF;
+	text-shadow: 0 0 10px #0000ff,0 0 15px #fff;
 }
 
 h2 {
@@ -34,11 +36,15 @@ h2 {
   letter-spacing: -1px;
   margin-bottom: 20px;
   font-weight: normal;
-  color: #777;
+  color: #010448;
 }
 
 h4{
-  margin-top:10px;
+  font-size: 1.1em;
+  line-height: 1.7em;
+  color: #FFF;
+  text-shadow: 0 0 5px #01033e,0 0 10px #fff;
+  margin-top: 200px;
   
 }
 
@@ -46,6 +52,11 @@ h4{
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+  color: #FFF;
+  text-align: center;
+  margin-top: 30px;
+  text-shadow: 0 0 5px #01033e,0 0 10px #fff;
+  
 }
 
 
@@ -57,6 +68,12 @@ p {
   text-align: center;
 }
 
+body{
+  background-image: url("/images/hoshizora.png");
+  background-size: cover;
+  font-family: 'M PLUS 1p', sans-serif;
+}
+
 // トップページのコンテンツ
 .top-wrapper{
     width: 250px;
@@ -64,6 +81,7 @@ p {
     text-align: center;
     align-items: center;
     margin: 0 auto;
+    background: #FFF;
     
     .text-content{
      padding-top: 60px;
@@ -73,6 +91,13 @@ p {
 }
 
 /* header */
+
+header {
+  background: #00001d;
+  text-shadow: 0 0 5px #01033e,0 0 10px #fff;
+  box-shadow: 0px 3px 10px -3px  #FFF;
+  font-family: 'M PLUS 1p', sans-serif;
+}
 
 #logo {
   float: left;
@@ -93,6 +118,15 @@ li {
     a{
       color: white;
     }
+}
+
+.btn-top{
+  background-color: #000016;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px;
+  margin: 0 5px 0 5px;
 }
 
 // ログイン
