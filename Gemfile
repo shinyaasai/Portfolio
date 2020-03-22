@@ -13,6 +13,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'font-awesome-sass', '~> 5.4.1'
 
 group :production do
   gem 'pg', '0.20.0'
