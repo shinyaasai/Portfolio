@@ -1,15 +1,15 @@
 <%= form_with url: done_records_path, method: :get, local: true do |f| %>
-<div class="form-group" %>
-<%= f.label :Serch %>
-<%= f.date_field :search %>
+<div class="serch-form center" %>
+  <%= f.date_field :search %>
+  <%= f.submit "Search", class: "btn btn-outline-dark", name: nil %>
 </div>
-<%= f.submit "Search", class: "btn btn-outline-dark", name: nil %>
 <% end %>
-
-
-
-
-
+<% if @records.empty? %>
+  <div class="no-record ">
+  <h1>まだ記録がありません</h1>
+  <%= link_to "記録を始める", form1_records_path, class: "btn btn-lg btn-index" %>
+  </div>
+<% else %>
 <div class="record d-flex align-items-center">
   <h1>睡眠記録</h1>
 </div>
@@ -20,6 +20,7 @@
       <th>記録をした日</th>
       <th>睡眠時間</th>
       <th>詳細</th>
+      <th>削除</th>
     </tr>
   </thead>
 
@@ -28,10 +29,12 @@
       <tr>
         <td><%= record.sleep_time.to_s(:date_jp) %>〜</br><%= record.getup_time.to_s(:date_jp)%></td>
         <td><%=(( record.getup_time -  record.sleep_time) / 3600).to_f.floor(1) %> 時間</td>
-        <td><%= link_to "詳細", record , class: "btn btn-primary" %></td>
+        <td><%= link_to "詳細", record , class: "btn btn-show" %></td>
+        <td><%= link_to "削除", record , class: "btn btn-delete", method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 </div>
+<% end %>
 <%= paginate @records %>
