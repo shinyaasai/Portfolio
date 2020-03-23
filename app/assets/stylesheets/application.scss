@@ -103,6 +103,7 @@ label{
 body{
   background-image: url("/images/hoshizora.png");
   background-size: cover;
+  background-repeat: no-repeat;
   font-family: 'M PLUS 1p', sans-serif;
 }
 
@@ -436,4 +437,10 @@ label{
    color: #FFF;
    opacity: 0.3;
   }
+}
+
+.average-time{
+  font-size: 3.0rem;
+  margin: 0 10px 0 10px;
+  font-weight: bold;
 }

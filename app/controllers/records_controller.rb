@@ -6,6 +6,7 @@ class RecordsController < ApplicationController
   before_action :validates_form3, only: :form4
   def done
     @records = Record.where(user_id: current_user.id).page(params[:page]).search(params[:search]).order(getup_time: :desc)
+    @average = 0
   end
     
   def form1

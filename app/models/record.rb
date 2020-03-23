@@ -20,7 +20,7 @@ class Record < ApplicationRecord
   
   def self.search(search)
       if search
-        Record.where(['created_at LIKE ?', "%#{search}%"])
+        Record.where(['getup_time LIKE ?', "%#{search}%"])
       else
         Record.all
       end
