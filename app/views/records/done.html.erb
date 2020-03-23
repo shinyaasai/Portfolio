@@ -1,7 +1,7 @@
 <% @records.each do |record| %>
-  <% @average += (( record.getup_time -  record.sleep_time) / 3600).to_f.floor(1) / @records.count  %>
+  <% @average += (( record.getup_time -  record.sleep_time) / 3600).to_f.floor(1) / @records.count %>
 <% end %>
-<p>あなたの平均睡眠時間は<span class="average-time"><%= @average %></span>時間です</p>
+<p>あなたの平均睡眠時間は<span class="average-time"><%= @average.to_f.floor(1) %></span>時間です</p>
 
 <%= form_with url: done_records_path, method: :get, local: true do |f| %>
 <div class="serch-form center" %>
