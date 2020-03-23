@@ -5,7 +5,7 @@ class RecordsController < ApplicationController
   before_action :validates_form2, only: :form3
   before_action :validates_form3, only: :form4
   def done
-    @records = Record.where(user_id: current_user.id).page(params[:page]).search(params[:search])
+    @records = Record.where(user_id: current_user.id).page(params[:page]).search(params[:search]).order(getup_time: :desc)
   end
     
   def form1
@@ -41,7 +41,7 @@ class RecordsController < ApplicationController
   end
   
   def create
-    @record = Record.new(
+    record = Record.new(
                       user_id: session[:user_id],
                       "getup_time(1i)": session["getup_time(1i)"],
                       "getup_time(2i)": session["getup_time(2i)"],
@@ -60,13 +60,19 @@ class RecordsController < ApplicationController
                       sleepiness: session[:sleepiness],
                       memo: record_params[:memo]
                     )
-    @record.user_id = current_user.id                  
-    if @record.save                  
+    record.user_id = current_user.id                  
+    if record.save                  
     flash[:notice] = "登録しました"
-    redirect_to done_records_path
+      redirect_to done_records_path
     else
       redirect_to done_records_path
     end
+  end
+  
+  def destroy
+    record = Record.find(params[:id])
+    record.delete
+    redirect_to done_records_path
   end
   
     private

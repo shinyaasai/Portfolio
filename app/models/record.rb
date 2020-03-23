@@ -35,6 +35,5 @@ class Record < ApplicationRecord
     errors.add(:getup_time, "に未来日は選択できません") if getup_time > Time.now
   end
   
-  
 end
 
