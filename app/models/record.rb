@@ -2,6 +2,14 @@ class Record < ApplicationRecord
   require 'date'
   belongs_to :user
   
+  validates :medicine,   presence: true
+  validates :awakening,  presence: true
+  validates :getout,     presence: true
+  validates :sun,        presence: true
+  validates :sleepiness, presence: true
+  validate  :sleep_time_not_after_day
+  validate  :getup_time_not_after_day
+  
   enum medicine:  { 飲んだ: 1, 飲んでいない: 2  }
   enum awakening: { 起きた: 1, 起きていない: 2 }
   enum getout: { １０分: 1, ２０分: 2, ３０分: 3,  ４０分: 4, ５０分: 5,
@@ -17,4 +25,15 @@ class Record < ApplicationRecord
         Record.all
       end
   end
+  
+  def sleep_time_not_after_day
+    errors.add(:sleep_time, "に未来日は選択できません") if sleep_time > Time.now
+  end
+  
+  def getup_time_not_after_day
+    errors.add(:getup_time, "に未来日は選択できません") if getup_time > Time.now
+  end
+  
+  
 end
+
