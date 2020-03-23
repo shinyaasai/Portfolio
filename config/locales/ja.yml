@@ -8,6 +8,8 @@ ja:
         getout: どのくらいで布団から出た？
         sun: 朝日を浴びた？
         sleepiness: 元気に過ごせた？
+        sleep_time: 就寝時間
+        getup_time: 起床時間
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
