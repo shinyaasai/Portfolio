@@ -26,6 +26,7 @@ class Record < ApplicationRecord
       end
   end
   
+  # 未来日入力のバリデーションメソッド
   def sleep_time_not_after_day
     errors.add(:sleep_time, "に未来日は選択できません") if sleep_time > Time.now
   end
