@@ -1,9 +1,9 @@
 <%= form_with url: done_records_path, method: :get, local: true do |f| %>
-<div class="form-group" %>
-<%= f.label :Serch %>
+<div class="serch-form center" %>
 <%= f.date_field :search %>
-</div>
 <%= f.submit "Search", class: "btn btn-outline-dark", name: nil %>
+</div>
+
 <% end %>
 
 
