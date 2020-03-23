@@ -1,3 +1,4 @@
+<%= render 'layouts/error_messages' %>
 <label><span class="badge form3-badge"><i class="far fa-sun"></i>日中のこと</span></label>
 <%= form_for @record , url: form4_records_path, method: :get do |f| %>
   <%= f. hidden_field :user_id %>
