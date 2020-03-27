@@ -7,7 +7,7 @@
   <%= f.select :sleepiness, options_for_select({元気に過ごせた: "元気に過ごせた", 
                                                 少し眠気があった: "少し眠気があった",
                                                 １日中眠気があった: "１日中眠気があった"}),
-                                                include_blank: true %></br>
+                                                 prompt: "選択してください"%></br>
   </div>
   <div class="text-center">
   <%= f.submit '次へ', class: "btn btn-outline-dark btn-next w-150px" %>
