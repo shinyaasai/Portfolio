@@ -18,11 +18,11 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password %> <i>(空欄可)</i><br />
     <%= f.password_field :password, autocomplete: "new-password", class: "form-control"  %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <em><%= @minimum_password_length %>文字以上で入力してください</em>
     <% end %>
   </div>
 
@@ -32,7 +32,7 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password %><br />
     <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control"  %>
   </div>
 
