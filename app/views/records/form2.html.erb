@@ -1,9 +1,11 @@
 <%= render 'layouts/error_messages' %>
-<label><span class="badge form2-badge"><i class="far fa-sun"></i>朝のこと</span></label>
+<div class="morning-label">
+  <span><i class="far fa-sun"></i>朝のこと</span>
+</div>
 <%= form_for @record , url: form3_records_path, method: :get do |f| %>
   <%= f. hidden_field :user_id %>
   <div class= "form2-label">
-  <%= f.label :getup_time,"何時に起きた?", class: "col-sm-4 control-label label-text" %><br>
+  <%= f.label :getup_time,"何時に起きた?", class: "control-label label-text" %><br>
   <%= f.datetime_select :getup_time,discard_year:true, class: "form-control form-control-inline"%></br>
   </div>
   <div class= "form2-label">
@@ -20,6 +22,6 @@
   </div>
   
   <div class="text-center">
-  <%= f.submit '次へ', class: "btn btn-outline-dark btn-next w-150px" %>
+  <%= f.submit '次へ', class: "btn btn-outline-dark btn-next" %>
   </div>
 <% end %>

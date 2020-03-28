@@ -1,26 +1,42 @@
-<header class="navbar navbar-fixed-top  navbar-expand-sm">
+<header>
+  <nav  class="navbar navbar-fixed-top navbar-dark navbar-expand-md">
   <div class="container">
     <%= link_to Time.current.to_s(:datetime_jp), "/", id:"logo"%>
-    <div class="nav">
-      <ul class="nav navbar-nav navbar-right ">
-        <li><%= link_to form1_records_path do %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      
+      <!--パソコン表示-->
+      <ul class="nav navbar-nav pc">
+        <li class="nav-item active"><%= link_to form1_records_path do %>
             <i class="far fa-edit fa-2x"></i>
             <% end %>
         </li>
-        <li><%= link_to done_records_path do %>
+        <li class="nav-item"><%= link_to done_records_path do %>
             <i class="far fa-list-alt fa-2x"></i>
             <% end %>
         </li>
-        <li><%= link_to edit_user_registration_path do%>
+        <li class="nav-item"><%= link_to edit_user_registration_path do%>
             <i class="far fa-user fa-2x"></i>
             <% end %>
         </li>
-        <li><%= link_to destroy_user_session_path, method: :delete do %>
+        <li class="nav-item"><%= link_to destroy_user_session_path, method: :delete do %>
             <i class="fas fa-sign-out-alt fa-2x"></i>
             <% end %>
         </li>
       </ul>
+      
+      <!--スマホ表示-->
+      <ul class="nav navbar-nav sp">
+        <li class="nav-item active"><%= link_to "記録する", form1_records_path %> </li>
+        <li class="nav-item"><%= link_to "一覧をみる", done_records_path %></li>
+        <li class="nav-item"><%= link_to "アカウント編集", edit_user_registration_path %></li>
+        <li class="nav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+      </ul>
+      
     </div>
   </div>
+  </nav>
 </header>
 

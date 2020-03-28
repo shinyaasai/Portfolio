@@ -1,5 +1,7 @@
 <%= render 'layouts/error_messages' %>
-<label><span class="badge form3-badge"><i class="far fa-sun"></i>日中のこと</span></label>
+<div class="lunch-label">
+  <span><i class="far fa-sun"></i>昼のこと</span>
+</div>
 <%= form_for @record , url: form4_records_path, method: :get do |f| %>
   <%= f. hidden_field :user_id %>
   <div class= "form3-label">
@@ -10,6 +12,6 @@
                                                  prompt: "選択してください"%></br>
   </div>
   <div class="text-center">
-  <%= f.submit '次へ', class: "btn btn-outline-dark btn-next w-150px" %>
+  <%= f.submit '次へ', class: "btn btn-outline-dark btn-next" %>
   </div>
 <% end %>

@@ -1,11 +1,13 @@
-<label><span class="badge form4-badge"><i class="fas fa-sticky-note"></i>1日を通じて</span></label>
+<div class="day-label">
+  <span><i class="fas fa-sticky-note"></i>1日を通じて</span>
+</div>
 <%= form_for @record, url: records_path, metho: :post do |f| %>
   <%= f. hidden_field :user_id %>
-  <div class= "form4-label">
+  <div class= "form4-label form-group">
   <%= f.label :memo,"思ったことをメモ", class: "label-text" %><br>
-  <%= f.text_area :memo%></br>
+  <%= f.text_area :memo, class: "form-control"%></br>
   </div>
   <div class="text-center">
-  <%= f.submit '次へ', class: "btn btn-outline-dark btn-next w-150px" %>
+  <%= f.submit '次へ', class: "btn btn-outline-dark btn-next" %>
   </div>
 <% end %>

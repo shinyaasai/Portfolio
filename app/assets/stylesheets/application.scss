@@ -18,6 +18,24 @@
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
  @import url('https://fonts.googleapis.com/css?family=M+PLUS+1p');
+ 
+ @media (min-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+// パソコン表示
+.sp { display: none !important; }
+// スマートフォン表示
+@media only screen and (max-width: 750px) {
+.pc { display: none !important; }
+.sp { display: block !important; }
+}
+ 
+ html {
+   height: 100%;
+ }
  /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -79,8 +97,61 @@ a{
   color: #FFF;
 }
 
-label{
+// 記録ページのラベル
+.morning-label{
+  width: 340px;
+  background: #052657;
+  margin: 30px 0 20px 0;
+  padding: 10px 20px;
+  font-size: 2.5em;
+  letter-spacing: -2px;
+  text-align: center;
   color: #FFF;
+  box-shadow: 0px 0px 5px;
+  text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
+  
+}
+
+.lunch-label{
+  width: 340px;
+  background: #052657;
+  margin: 30px 0 20px 0;
+  padding: 10px 20px;
+  font-size: 2.5em;
+  letter-spacing: -2px;
+  text-align: center;
+  color: #FFF;
+  box-shadow: 0px 0px 5px;
+  text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
+  
+}
+
+.night-label{
+  width: 340px;
+  background: #052657;
+  padding: 10px 20px;
+  margin: 30px 0 20px 0;
+  font-size: 2.5em;
+  letter-spacing: -2px;
+  text-align: center;
+  color: #FFF;
+  box-shadow: 0px 0px 5px;
+  text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
+  
+}
+
+.day-label{
+  width: 340px;
+  background: #052657;
+  margin: 30px 0 20px 0;
+  padding: 10px 20px;
+  font-size: 2.5em;
+  letter-spacing: -2px;
+  text-align: center;
+  color: #FFF;
+  box-shadow: 0px 0px 5px;
+  text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
+  
 }
 
 .btn{
@@ -101,6 +172,7 @@ label{
 }
 
 body{
+  height: 100%;
   background-image: url("/images/hoshizora.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -159,6 +231,7 @@ li {
       color: #FFF;
     }
 }
+
 // トップページのボタン
 .btn-top{
   background-color: #000016;
@@ -251,7 +324,7 @@ li {
 
 
 // 入力フォーム１
-.form1-badge{
+.badge{
   background: #052657;
   margin-top: 30px;
   padding: 10px 50px;
@@ -403,7 +476,7 @@ label{
 
 .table { 
   box-shadow: 0px 0px 10px;
-  table-layout: fixed;
+  // table-layout: fixed;
 }
 
 .table{
@@ -432,7 +505,6 @@ label{
 }
 .show-table{
   th{
-    width: 30%;
   }
 }
 // 検索フォーム
