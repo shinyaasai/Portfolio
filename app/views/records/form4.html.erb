@@ -1,9 +1,9 @@
-<div class="day-label">
+<div class="record-label">
   <span><i class="fas fa-sticky-note"></i>1日を通じて</span>
 </div>
 <%= form_for @record, url: records_path, metho: :post do |f| %>
   <%= f. hidden_field :user_id %>
-  <div class= "form4-label form-group">
+  <div class= "form-label form-group">
   <%= f.label :memo,"思ったことをメモ", class: "label-text" %><br>
   <%= f.text_area :memo, class: "form-control"%></br>
   </div>

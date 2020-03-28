@@ -25,17 +25,14 @@
   }
 }
 
-// パソコン表示
-.sp { display: none !important; }
-// スマートフォン表示
-@media only screen and (max-width: 750px) {
-.pc { display: none !important; }
-.sp { display: block !important; }
+ body{
+ padding-top: 70px;
+  background-image: url("/images/hoshizora.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'M PLUS 1p', sans-serif;
 }
  
- html {
-   height: 100%;
- }
  /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -97,8 +94,12 @@ a{
   color: #FFF;
 }
 
+label{
+  color: #FFF;
+}
+
 // 記録ページのラベル
-.morning-label{
+.record-label{
   width: 340px;
   background: #052657;
   margin: 30px 0 20px 0;
@@ -109,50 +110,10 @@ a{
   color: #FFF;
   box-shadow: 0px 0px 5px;
   text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
-  
-}
+  }
 
-.lunch-label{
-  width: 340px;
-  background: #052657;
-  margin: 30px 0 20px 0;
-  padding: 10px 20px;
-  font-size: 2.5em;
-  letter-spacing: -2px;
-  text-align: center;
-  color: #FFF;
-  box-shadow: 0px 0px 5px;
-  text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
-  
-}
 
-.night-label{
-  width: 340px;
-  background: #052657;
-  padding: 10px 20px;
-  margin: 30px 0 20px 0;
-  font-size: 2.5em;
-  letter-spacing: -2px;
-  text-align: center;
-  color: #FFF;
-  box-shadow: 0px 0px 5px;
-  text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
-  
-}
 
-.day-label{
-  width: 340px;
-  background: #052657;
-  margin: 30px 0 20px 0;
-  padding: 10px 20px;
-  font-size: 2.5em;
-  letter-spacing: -2px;
-  text-align: center;
-  color: #FFF;
-  box-shadow: 0px 0px 5px;
-  text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
-  
-}
 
 .btn{
   background-color: #000016;
@@ -171,13 +132,6 @@ a{
   text-align: center;
 }
 
-body{
-  height: 100%;
-  background-image: url("/images/hoshizora.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  font-family: 'M PLUS 1p', sans-serif;
-}
 
 // ラベルテキスト
 .label-text{
@@ -203,7 +157,7 @@ body{
 
 /* header */
 
-header {
+.fixed-top {
   background: #00001d;
   text-shadow: 0 0 5px #01033e,0 0 10px #fff;
   box-shadow: 0px 3px 10px -3px  #FFF;
@@ -213,7 +167,7 @@ header {
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
+  font-size: 1.4em;
   color: #fff;
   letter-spacing: -1px;
   font-weight: bold;
@@ -335,7 +289,7 @@ li {
   text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
 }
 
-.form1-label{
+.form-label{
   font-size: 2.0rem;
   color: #FFF;
   font-weight: bold;
@@ -361,12 +315,6 @@ li {
   text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
 }
 
-.form2-label{
-  font-size: 2.0rem;
-  color: #000;
-  font-weight: bold;
-}
-
 .w-150px{
   font-size: 20px;
   font-weight: bold;
@@ -387,12 +335,6 @@ li {
   text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
 }
 
-.form3-label{
-  font-size: 2.0rem;
-  color: #00bfff;
-  font-weight: bold;
-}
-
 // 入力フォーム4
 .form4-badge{
   color: #FFF;
@@ -403,12 +345,6 @@ li {
   letter-spacing: -2px;
   box-shadow: 0px 0px 5px;
   text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
-}
-
-.form4-label{
-  font-size: 2.0rem;
-  color: #00bfff;
-  font-weight: bold;
 }
 
 .w-150px{
@@ -476,7 +412,7 @@ label{
 
 .table { 
   box-shadow: 0px 0px 10px;
-  // table-layout: fixed;
+  table-layout: fixed;
 }
 
 .table{
@@ -527,4 +463,39 @@ label{
   font-size: 3.0rem;
   margin: 0 10px 0 10px;
   font-weight: bold;
+}
+
+
+// パソコン表示
+.sp { display: none !important; }
+// スマートフォン表示
+@media only screen and (max-width: 750px) {
+.pc { display: none !important; }
+.sp { display: block !important; }
+#title{ margin: 30px 0 60px 0; }
+ h4{ margin: 30px 0 30px 0;}
+ .table{
+   th{ text-align: center;}
+   td{ 
+     font-size: 0.7rem;
+     padding: 8px;
+     text-align: center;
+   }
+ }
+ .btn-show{ font-size: 0.5rem; }
+ .btn-delete{ font-size: 0.5rem; }
+ .record-label{padding: 10px;
+              margin: 15px 10px;
+              width: auto;
+              font-size: 2.0rem;
+              }
+  .form-label{ font-size: 1.0rem; }            
+  .label-text{ font-size: 1.5rem; }
+  select{font-size: 1.0rem;
+         padding: 10px}
+  .alert{
+    ul{
+      padding: 0;
+    }
+  }
 }
