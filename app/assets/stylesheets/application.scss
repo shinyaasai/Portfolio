@@ -18,6 +18,21 @@
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
  @import url('https://fonts.googleapis.com/css?family=M+PLUS+1p');
+ 
+ @media (min-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+ body{
+ padding-top: 70px;
+  background-image: url("/images/hoshizora.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'M PLUS 1p', sans-serif;
+}
+ 
  /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -66,7 +81,7 @@ em{
 
 
 p {
-  font-size: 1.1em;
+  font-size: 1.3em;
   line-height: 1.7em;
   color: #FFF;
   text-align: center;
@@ -82,6 +97,23 @@ a{
 label{
   color: #FFF;
 }
+
+// 記録ページのラベル
+.record-label{
+  width: 340px;
+  background: #052657;
+  margin: 30px 0 20px 0;
+  padding: 10px 20px;
+  font-size: 2.5em;
+  letter-spacing: -2px;
+  text-align: center;
+  color: #FFF;
+  box-shadow: 0px 0px 5px;
+  text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
+  }
+
+
+
 
 .btn{
   background-color: #000016;
@@ -100,12 +132,6 @@ label{
   text-align: center;
 }
 
-body{
-  background-image: url("/images/hoshizora.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  font-family: 'M PLUS 1p', sans-serif;
-}
 
 // ラベルテキスト
 .label-text{
@@ -131,7 +157,7 @@ body{
 
 /* header */
 
-header {
+.fixed-top {
   background: #00001d;
   text-shadow: 0 0 5px #01033e,0 0 10px #fff;
   box-shadow: 0px 3px 10px -3px  #FFF;
@@ -141,7 +167,7 @@ header {
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
+  font-size: 1.4em;
   color: #fff;
   letter-spacing: -1px;
   font-weight: bold;
@@ -159,6 +185,7 @@ li {
       color: #FFF;
     }
 }
+
 // トップページのボタン
 .btn-top{
   background-color: #000016;
@@ -251,7 +278,7 @@ li {
 
 
 // 入力フォーム１
-.form1-badge{
+.badge{
   background: #052657;
   margin-top: 30px;
   padding: 10px 50px;
@@ -262,7 +289,7 @@ li {
   text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
 }
 
-.form1-label{
+.form-label{
   font-size: 2.0rem;
   color: #FFF;
   font-weight: bold;
@@ -288,12 +315,6 @@ li {
   text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
 }
 
-.form2-label{
-  font-size: 2.0rem;
-  color: #000;
-  font-weight: bold;
-}
-
 .w-150px{
   font-size: 20px;
   font-weight: bold;
@@ -314,12 +335,6 @@ li {
   text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
 }
 
-.form3-label{
-  font-size: 2.0rem;
-  color: #00bfff;
-  font-weight: bold;
-}
-
 // 入力フォーム4
 .form4-badge{
   color: #FFF;
@@ -330,12 +345,6 @@ li {
   letter-spacing: -2px;
   box-shadow: 0px 0px 5px;
   text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
-}
-
-.form4-label{
-  font-size: 2.0rem;
-  color: #00bfff;
-  font-weight: bold;
 }
 
 .w-150px{
@@ -432,7 +441,6 @@ label{
 }
 .show-table{
   th{
-    width: 30%;
   }
 }
 // 検索フォーム
@@ -455,4 +463,47 @@ label{
   font-size: 3.0rem;
   margin: 0 10px 0 10px;
   font-weight: bold;
+}
+
+
+// パソコン表示
+.sp { display: none !important; }
+// スマートフォン表示
+@media only screen and (max-width: 750px) {
+.pc { display: none !important; }
+.sp { display: block !important; }
+#title{ margin: 30px 0 60px 0; }
+ h4{ margin: 30px 0 30px 0;}
+ .table{
+   th{ text-align: center;
+       font-size: 0.9rem;
+       padding: 6px;
+   }
+   td{ 
+     font-size: 0.7rem;
+     padding: 8px;
+     text-align: center;
+   }
+ }
+ .btn-show{ font-size: 0.5rem; }
+ .btn-delete{ font-size: 0.5rem; }
+ .record-label{padding: 10px;
+              margin: 15px 10px;
+              width: auto;
+              font-size: 2.0rem;
+              }
+  .form-label{ font-size: 1.0rem; }            
+  .label-text{ font-size: 1.5rem; }
+  select{font-size: 1.0rem;
+         padding: 10px}
+  .alert{
+    ul{
+      padding: 0;
+    }
+  }
+  p{
+    font-size: 0.8rem;
+  }
+  .average-time{font-size: 2.0rem;}
+  .show-title{font-size: 1.9rem;}
 }

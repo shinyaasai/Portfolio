@@ -9,7 +9,6 @@
   <%= f.submit "Search", class: "btn btn-outline-dark", name: nil %>
 </div>
 <% end %>
-
 <% if @records.empty? %>
   <div class="no-record ">
   <h1>まだ記録がありません</h1>
@@ -19,19 +18,17 @@
 <div class="record d-flex align-items-center">
   <h1>睡眠記録</h1>
 </div>
-<div clas="table-responsive">
-<table class="table table-hover boards__table center" >
+<table class="table table-hover" >
   <thead>
     <tr>
-      <th>記録をした日</th>
+      <th>記録日</th>
       <th>睡眠時間</th>
       <th>詳細</th>
       <th>削除</th>
     </tr>
   </thead>
-
   <tbody>
-    <% @records.each do |record| %>
+   <% @records.each do |record| %>
       <tr>
         <td><%= record.sleep_time.to_s(:date_jp) %>〜</br><%= record.getup_time.to_s(:date_jp)%></td>
         <td><%=(( record.getup_time -  record.sleep_time) / 3600).to_f.floor(1) %> 時間</td>
@@ -41,6 +38,6 @@
     <% end %>
   </tbody>
 </table>
-</div>
 <% end %>
+
 <%= paginate @records %>

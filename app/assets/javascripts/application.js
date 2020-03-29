@@ -23,3 +23,4 @@ $(document).ready(function() {
 $('#title').css('display', 'none').fadeIn(5000);
 
 });
+
