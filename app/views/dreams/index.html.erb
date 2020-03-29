@@ -1,0 +1,12 @@
+<% @records.each do |dream| %>
+  <% if dream.memo.present? %>
+  <div class="card">
+    <div class="card-header font-weight-bold">
+      <%= dream.user_id %>
+   </div>
+    <div class="card-body text-left">
+      <%= dream.memo %>
+    </div>
+   </div>
+  <% end %>
+<% end %>
