@@ -31,3 +31,19 @@
    　<td><%= @record.sleepiness %></td>
    </tr> 
 </table>
+
+<div class="card">
+  <div class="card-header">
+    <h5>夢の記録</h5>
+  </div>
+<div class="card-body">
+  <% if @record.memo.empty? %>
+  <h6>記録がありません</h6>
+  <%= link_to "みんなの夢を見てみよう！", '#' %>
+  <% else %>
+    <p class="card-text"><%= @record.memo %></p>
+    <p class="text-right font-weight-bold mr-10">
+    <%= link_to "みんなの夢を見てみよう！", '#' %>
+  </div>
+<% end %>
+</div> 

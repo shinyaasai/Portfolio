@@ -1,13 +1,18 @@
 <div class="record-label">
-  <span><i class="fas fa-sticky-note"></i>1日を通じて</span>
+  <span><i class="fas fa-sticky-note"></i>夢日記</span>
 </div>
+<div class="row">
+  <div class= "col-md-6">
 <%= form_for @record, url: records_path, metho: :post do |f| %>
   <%= f. hidden_field :user_id %>
   <div class= "form-label form-group">
-  <%= f.label :memo,"思ったことをメモ", class: "label-text" %><br>
+  <%= f.label :memo,"夢を記録しよう！", class: "label-text" %><br>
   <%= f.text_area :memo, class: "form-control"%></br>
   </div>
+  
   <div class="text-center">
   <%= f.submit '次へ', class: "btn btn-outline-dark btn-next" %>
   </div>
 <% end %>
+</div>
+</div>

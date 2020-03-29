@@ -71,6 +71,15 @@ h4{
   
 }
 
+h6{
+  font-size: 1.5em;
+  line-height: 1.7em;
+  color: #000;
+  opacity: 0.5;
+  margin-top: 10px;
+  text-align: center;
+}
+
 i {
   color: #FFF;
 }
@@ -420,6 +429,7 @@ label{
     color: #FFF;
 	  text-shadow: 0 0 5px #01033e,0 0 10px #fff;
 	  background: rgba(5,19,75,0.7);
+	  text-align: center;
   }
   td{
     color: #FFF;
@@ -427,6 +437,7 @@ label{
     background:radial-gradient(#264879,rgba(1 , 0, 54, .5));
     font-weight: bold;
     vertical-align: middle;
+    text-align: center;
   }
 }
 
@@ -442,6 +453,20 @@ label{
 .show-table{
   th{
   }
+}
+
+.card-body{
+  p {
+    color: #000;
+    font-size: 1.0rem;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    text-shadow: none;
+  }
+  a{
+    color: #000;
+  } text-align: right;
 }
 // 検索フォーム
 .serch-form{
