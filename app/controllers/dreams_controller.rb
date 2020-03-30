@@ -1,5 +1,5 @@
 class DreamsController < ApplicationController
   def index
-    @records = Record.all.select(:user_id, :memo)
+    @records = Record.all
   end
 end

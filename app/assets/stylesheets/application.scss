@@ -24,9 +24,10 @@
     max-width: 960px;
   }
 }
-
+html{
+}
  body{
- padding-top: 70px;
+  padding-top: 70px;
   background-image: url("/images/hoshizora.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -58,6 +59,7 @@ h2 {
 }
 
 h3{
+  margin-top: 40px;
   color: #FFF;
   text-shadow: 0 0 5px #01033e,0 0 10px #fff;
 }
@@ -133,9 +135,9 @@ label{
 }
 
 
-.row{
-    margin-top: 50px;
-}
+// .row{
+//     margin-top: px;
+// }
 
 .center {
   text-align: center;
@@ -258,7 +260,7 @@ li {
 #signup .container #signup-row #signup-column #signup-box {
   margin-top: 40px;
   max-width: 600px;
-  height: 400px;
+  height: 480px;
   border: 1px solid #9C9C9C;
   background-color: #092b61;
 }
@@ -498,7 +500,16 @@ label{
 .pc { display: none !important; }
 .sp { display: block !important; }
 #title{ margin: 30px 0 60px 0; }
+ h3{ margin-top: 10px;
+     padding: 0;
+ }
  h4{ margin: 30px 0 30px 0;}
+ #signup .container #signup-row #signup-column #signup-box{
+   margin: 20px 0;
+ }
+ #login .container #login-row #login-column #login-box {
+   margin: 20px 0;
+ }
  .table{
    th{ text-align: center;
        font-size: 0.9rem;
