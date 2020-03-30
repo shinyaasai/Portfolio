@@ -64,7 +64,7 @@ class RecordsController < ApplicationController
     record.user_id = current_user.id                  
     if record.save                  
     flash[:notice] = "登録しました"
-      redirect_to done_records_path
+      redirect_to record
     else
       redirect_to done_records_path
     end
@@ -171,3 +171,5 @@ class RecordsController < ApplicationController
       render '/records/form3' unless @record.valid?
     end
 end
+
+
