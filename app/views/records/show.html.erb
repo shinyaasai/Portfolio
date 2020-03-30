@@ -39,7 +39,7 @@
 <div class="card-body">
   <% if @record.memo.empty? %>
   <h6>記録がありません</h6>
-  <%= link_to "みんなの夢を見てみよう！", '#' %>
+  <%= link_to "みんなの夢を見てみよう！", dreams_path %>
   <% else %>
     <p class="card-text"><%= @record.memo %></p>
     <p class="text-right font-weight-bold mr-10">
