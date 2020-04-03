@@ -33,6 +33,14 @@ html{
   background-repeat: no-repeat;
   font-family: 'M PLUS 1p', sans-serif;
 }
+
+.center {
+  text-align: center;
+}
+
+.right{
+  text-align: right;
+}
  
  /* typography */
 
@@ -138,10 +146,6 @@ label{
 // .row{
 //     margin-top: px;
 // }
-
-.center {
-  text-align: center;
-}
 
 
 // ラベルテキスト
@@ -376,7 +380,6 @@ select {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	margin-bottom: 20px;
 	padding: 15px 30px 15px 30px;
 	font-size: 93%;
 	text-align: center;
@@ -432,6 +435,7 @@ label{
 	  text-shadow: 0 0 5px #01033e,0 0 10px #fff;
 	  background: rgba(5,19,75,0.7);
 	  text-align: center;
+	  vertical-align: middle;
   }
   td{
     color: #FFF;
@@ -514,6 +518,7 @@ label{
    th{ text-align: center;
        font-size: 0.9rem;
        padding: 6px;
+       width: 40%;
    }
    td{ 
      font-size: 0.7rem;
