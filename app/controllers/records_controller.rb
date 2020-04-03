@@ -69,12 +69,26 @@ class RecordsController < ApplicationController
       redirect_to done_records_path
     end
   end
+
+  def edit
+    @record = Record.find(params[:id])
+  end
+  
+  def update
+    record = Record.find(params[:id])
+    record.update_attributes(record_params)
+    if record.save
+      flash[:notice] = "更新しました"  
+      redirect_to record
+    end
+  end
   
   def destroy
     record = Record.find(params[:id])
     record.delete
     redirect_to done_records_path
   end
+  
   
     private
    
