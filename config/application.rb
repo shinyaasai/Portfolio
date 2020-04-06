@@ -13,7 +13,7 @@ module SleepApp
      html_tag
     end
     config.generators do |g| 
-      g.test _framework :rspec,
+      g.test_framework :rspec,
         fixtures: false,
         view_specs: false,
         helper_specs: false,
