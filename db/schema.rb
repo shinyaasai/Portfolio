@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200405093901) do
+ActiveRecord::Schema.define(version: 20200411133223) do
+
+  create_table "dream_posts", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "record_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["record_id"], name: "index_dream_posts_on_record_id"
+    t.index ["user_id"], name: "index_dream_posts_on_user_id"
+  end
 
   create_table "records", force: :cascade do |t|
     t.integer "awakening"

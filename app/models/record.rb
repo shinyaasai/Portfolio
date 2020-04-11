@@ -1,6 +1,7 @@
 class Record < ApplicationRecord
   require 'date'
   belongs_to :user
+  has_one :dream_post
   validates :getup_time, presence: true
   validates :sleep_time, presence: true
   validates :medicine,   presence: true
@@ -34,6 +35,10 @@ class Record < ApplicationRecord
   
   def getup_time_not_after_day
     errors.add(:getup_time, "に未来日は選択できません") if getup_time > Time.now
+  end
+  
+  def dream_post_by(user)
+    DreamPost.find_by(user_id: user.id, record_id: id)
   end
   
 end
