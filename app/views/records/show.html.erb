@@ -44,6 +44,11 @@
   <h6>記録がありません</h6>
   <%= link_to "みんなの夢を見てみよう！", dreams_path %>
   <% else %>
+    <% if @record.dream_post_by(current_user).present? %>
+      <%= link_to "投稿を取り消す", record_dream_post_path(@record.id, @record.dream_post_by(current_user)), method: :DELETE, remote: true %>
+    <% else %>
+      <%= link_to "投稿する", record_dream_posts_path(@record), method: :POST, remote: true %>
+    <% end %>
     <p class="card-text"><%= @record.memo %></p>
     <p class="text-right font-weight-bold mr-10">
     <%= link_to "みんなの夢を見てみよう！", dreams_path %>
