@@ -496,6 +496,28 @@ label{
   font-weight: bold;
 }
 
+#dream-post{
+  margin-left: auto;
+}
+// 投稿ボタン
+.btn-post{
+  background-color: #006080;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px;
+  opacity: 0.8;
+}
+
+// 投稿済みボタン
+.btn-posted{
+  background-color: #ff0000;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px;
+  opacity: 0.8;
+}
 
 // パソコン表示
 .sp { display: none !important; }

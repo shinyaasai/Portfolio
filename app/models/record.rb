@@ -1,7 +1,7 @@
 class Record < ApplicationRecord
   require 'date'
   belongs_to :user
-  has_many :dream_posts
+  has_one :dream_post
   validates :getup_time, presence: true
   validates :sleep_time, presence: true
   validates :medicine,   presence: true

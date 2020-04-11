@@ -36,21 +36,21 @@
 </table>
 
 <div class="card">
-  <div class="card-header">
+  <div class="card-header d-flex">
     <h5>夢の記録</h5>
+    <div id= "dream-post">
+      <% if @record.dream_post_by(current_user).present? %>
+        <%= link_to "投稿を取り消す", record_dream_post_path(@record.id, @record.dream_post_by(current_user)), method: :DELETE, remote: true, class: "btn btn-posted" %>
+      <% else %>
+        <%= link_to "投稿する", record_dream_posts_path(@record), method: :POST, remote: true, class: "btn btn-post" %>
+      <% end %>
+    </div>
   </div>
 <div class="card-body">
   <% if @record.memo.empty? %>
   <h6>記録がありません</h6>
   <%= link_to "みんなの夢を見てみよう！", dreams_path %>
   <% else %>
-    <div id= "dream-post">
-      <% if @record.dream_post_by(current_user).present? %>
-        <%= link_to "投稿を取り消す", record_dream_post_path(@record.id, @record.dream_post_by(current_user)), method: :DELETE, remote: true %>
-      <% else %>
-        <%= link_to "投稿する", record_dream_posts_path(@record), method: :POST, remote: true %>
-      <% end %>
-    </div>
     <p class="card-text"><%= @record.memo %></p>
     <p class="text-right font-weight-bold mr-10">
     <%= link_to "みんなの夢を見てみよう！", dreams_path %>
