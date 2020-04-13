@@ -12,23 +12,23 @@
 
 ActiveRecord::Schema.define(version: 20200411133223) do
 
-  create_table "dream_posts", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "record_id", null: false
+  create_table "dream_posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id", null: false
+    t.bigint "record_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["record_id"], name: "index_dream_posts_on_record_id"
     t.index ["user_id"], name: "index_dream_posts_on_user_id"
   end
 
-  create_table "records", force: :cascade do |t|
+  create_table "records", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "awakening"
     t.integer "medicine"
     t.integer "sun"
     t.text "memo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.integer "getout"
     t.integer "sleepiness"
     t.datetime "getup_time"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20200411133223) do
     t.index ["user_id"], name: "index_records_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -49,4 +49,7 @@ ActiveRecord::Schema.define(version: 20200411133223) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "dream_posts", "records"
+  add_foreign_key "dream_posts", "users"
+  add_foreign_key "records", "users"
 end

@@ -1,13 +1,13 @@
 <% @records.each do |dream| %>
-  <% if dream.dream_post.present? %>
-  <% user = dream.user %>
-  <div class="card">
-    <div class="card-header font-weight-bold">
-    <%= user.user_name %>  
-   </div>
-    <div class="card-body text-left">
-      <%= dream.memo %>
-    </div>
-   </div>
-  <% end %>
+<% if dream.dream_post.present? %>
+<% user = dream.user %>
+<div class="card">
+  <div class="card-header font-weight-bold">
+    <%= user.user_name %>
+  </div>
+  <div class="card-body text-left">
+    <%= dream.memo %>
+  </div>
+</div>
+<% end %>
 <% end %>
