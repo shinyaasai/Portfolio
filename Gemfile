@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '~> 5.1.6'
+gem 'mysql2'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -16,15 +17,10 @@ gem 'devise-i18n-views'
 gem 'font-awesome-sass', '~> 5.4.1'
 gem 'kaminari'
 
-group :production do
-  gem 'pg', '0.20.0'
-end
-
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'sqlite3', '~> 1.3.6'
   gem 'rspec-rails', '~> 3.6.0'
   gem "factory_bot_rails", "~> 4.10.0"
 end
