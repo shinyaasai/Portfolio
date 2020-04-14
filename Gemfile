@@ -18,6 +18,10 @@ gem 'font-awesome-sass', '~> 5.4.1'
 gem 'kaminari'
 gem 'dotenv-rails'
 
+group :production, :staging do
+    gem 'unicorn', '5.4.1'
+end
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
