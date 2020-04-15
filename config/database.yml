@@ -15,8 +15,8 @@ development:
   reconnect: false
   database: SleepApp_development
   pool: 5
-  username: ENV['DB_USER_NAME']
-  password: ENV['DB_PASSWORD']
+  username: root
+  password:
   host: localhost
 
 test:
@@ -26,8 +26,8 @@ test:
   reconnect: false
   database: Sleep_App_test
   pool: 5
-  username: ENV['DB_USER_NAME']
-  password: ENV['DB_PASSWORD']
+  username: root
+  password: 
   host: localhost
 
 production:
