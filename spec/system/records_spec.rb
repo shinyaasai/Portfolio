@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature "Records", type: :feature do
-  scenario "ユーザーは新しく記録を入力する" do
+RSpec.feature "Records", type: :system do
+  it "ユーザーは新しく記録を入力する" do
     user = create(:user)
     visit root_path
     click_link "ログイン"
