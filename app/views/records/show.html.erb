@@ -38,6 +38,9 @@
 <div class="card">
   <div class="card-header d-flex">
     <h5>夢の記録</h5>
+    <% @record.tags.each do |tag| %>
+    <span class="badge badge-primary"><%= tag.name %></span>
+    <% end %>
     <div id= "dream-post">
       <% if @record.dream_post_by(current_user).present? %>
         <%= link_to "投稿を取り消す", record_dream_post_path(@record.id, @record.dream_post_by(current_user)), method: :DELETE, remote: true, class: "btn btn-posted" %>

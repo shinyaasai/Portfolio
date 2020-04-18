@@ -292,16 +292,15 @@ li {
 }
 
 
-// 入力フォーム１
-.badge{
-  background: #052657;
-  margin-top: 30px;
-  padding: 10px 50px;
-  font-size: 3em;
-  letter-spacing: -2px;
-  color: #FFF;
-  box-shadow: 0px 0px 5px;
-  text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
+// 入力フォーム
+
+.badge {
+  padding: 0.25em 0.4em;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
 }
 
 .form-label{
@@ -476,6 +475,7 @@ label{
 
   }
 }
+
 // 検索フォーム
 .serch-form{
   margin-top: 20px;

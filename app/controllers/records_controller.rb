@@ -59,7 +59,8 @@ class RecordsController < ApplicationController
       sun: session[:sun],
       getout: session[:getout],
       sleepiness: session[:sleepiness],
-      memo: record_params[:memo]
+      memo: record_params[:memo],
+      tag_ids: record_params[:tag_ids]
     )
     record.user_id = current_user.id
     if record.save
@@ -102,7 +103,8 @@ class RecordsController < ApplicationController
     :'sleep_time(3i)', :'sleep_time(4i)',
     :'sleep_time(5i)',
     :memo, :sun, :getout, :sleepiness,
-    :medicine, :awakening, :user_id
+    :medicine, :awakening, :user_id,
+    tag_ids: []
   )
 end
 
