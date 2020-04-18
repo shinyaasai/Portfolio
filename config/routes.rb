@@ -3,11 +3,11 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => {
   :registrations => 'users/registrations',
-  :sessions => 'users/sessions'   
-  } 
+  :sessions => 'users/sessions'
+  }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'statics_pages#home'
-  resources :records do 
+  resources :records do
     resources :dream_posts, only:[:create, :destroy]
     collection do
       get 'form1'
@@ -17,5 +17,5 @@ Rails.application.routes.draw do
       get 'done'
     end
   end
-  resources :dreams, only:[:index]
+  resources :dreams, only:[:show, :index]
 end

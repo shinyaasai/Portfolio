@@ -6,7 +6,9 @@
     <%= user.user_name %>
   </div>
   <div class="card-body text-left">
-    <%= dream.memo %>
+    <%= truncate(dream.memo, length: 80) do %>
+    <%= link_to "続きを見る", dream_path(id: dream.id) %>
+    <% end %>
   </div>
 </div>
 <% end %>
