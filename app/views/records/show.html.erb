@@ -8,31 +8,31 @@
   <tr>
     <th>就寝時間</th>
     <td><%= @record.sleep_time.to_s(:datetime_jp)%></td>
-  </tr> 
+  </tr>
   <tr>
     <th>起床時間</th>
     <td><%= @record.getup_time.to_s(:datetime_jp)%></td>
-  </tr>  
+  </tr>
   <tr>
     <th>薬を飲んだ</th>
      <td><%= @record.medicine %></td>
-   </tr>   
+   </tr>
    <tr>
      <th>夜中に目が覚めた</th>
     <td><%= @record.awakening %></td>
-  </tr>   
+  </tr>
   <tr>
     <th>布団から出るまで</th>
     <td><%= @record.getout %></td>
-  </tr>   
+  </tr>
   <tr>
     <th>朝日を浴びた</th>
     <td><%= @record.sun %></td>
-   </tr>   
+   </tr>
    <tr>
      <th>日中の眠気</th>
    　<td><%= @record.sleepiness %></td>
-   </tr> 
+   </tr>
 </table>
 
 <div class="card">
@@ -51,9 +51,9 @@
   <h6>記録がありません</h6>
   <%= link_to "みんなの夢を見てみよう！", dreams_path %>
   <% else %>
-    <p class="card-text"><%= @record.memo %></p>
+    <p class="card-text"><%= truncate(@record.memo, length: 80) %></p>
     <p class="text-right font-weight-bold mr-10">
     <%= link_to "みんなの夢を見てみよう！", dreams_path %>
   </div>
 <% end %>
-</div> 
+</div>

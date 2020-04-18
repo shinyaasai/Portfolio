@@ -1,0 +1,10 @@
+<div class="dream-detail">
+  <div class="card">
+    <div class="card-header font-weight-bold">
+      <%= @user_name %><span><%= @record.sleep_time.to_s(:date_jp) %></span>
+    </div>
+    <div class="card-body text-left">
+      <%= @record.memo %>
+    </div>
+  </div>
+</div>

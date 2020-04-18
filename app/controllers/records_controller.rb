@@ -85,8 +85,10 @@ class RecordsController < ApplicationController
 
   def destroy
     record = Record.find(params[:id])
-    record.destroy
-    redirect_to done_records_path
+    if record.destroy
+      flash[:notice] = "削除しました"
+      redirect_to done_records_path
+    end
   end
 
 
