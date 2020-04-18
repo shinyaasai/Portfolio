@@ -13,12 +13,12 @@
  *= require_tree .
  *= require_self
  */
- 
+
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
  @import url('https://fonts.googleapis.com/css?family=M+PLUS+1p');
- 
+
  @media (min-width: 1200px) {
   .container {
     max-width: 960px;
@@ -41,7 +41,7 @@ html{
 .right{
   text-align: right;
 }
- 
+
  /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -78,7 +78,7 @@ h4{
   color: #FFF;
   text-shadow: 0 0 5px #01033e,0 0 10px #fff;
   margin-top: 200px;
-  
+
 }
 
 h6{
@@ -106,7 +106,7 @@ p {
   text-align: center;
   margin-top: 30px;
   text-shadow: 0 0 5px #01033e,0 0 10px #fff;
-  
+
 }
 
 a{
@@ -162,7 +162,7 @@ label{
     align-items: center;
     margin: 0 auto;
     background: #FFF;
-    
+
     .text-content{
      padding-top: 60px;
      width: 200px;
@@ -242,7 +242,7 @@ li {
   opacity: 0.8;
 
 }
-  
+
 // ログイン
 
 #login .container #login-row #login-column #login-box {
@@ -424,7 +424,7 @@ label{
   }
 }
 
-.table { 
+.table {
   box-shadow: 0px 0px 10px;
   table-layout: fixed;
 }
@@ -471,8 +471,10 @@ label{
     text-shadow: none;
   }
   a{
-    color: #000;
-  } text-align: right;
+    color: #00008b;
+    text-align: right;
+
+  }
 }
 // 検索フォーム
 .serch-form{
@@ -519,6 +521,24 @@ label{
   opacity: 0.8;
 }
 
+// 夢の詳細ページ
+.dream-detail{
+  .card-header{
+    font-size: 3.0rem;
+    font-weight: bold;
+      span{
+        font-size: 1.8rem;
+        float: right;
+
+      }
+  }
+  .card-body{
+    font-size: 1.5rem;
+    text-align: justify;
+    letter-spacing: 3px;
+  }
+}
+
 // パソコン表示
 .sp { display: none !important; }
 // スマートフォン表示
@@ -542,7 +562,7 @@ label{
        padding: 6px;
        width: 40%;
    }
-   td{ 
+   td{
      font-size: 0.7rem;
      padding: 8px;
      text-align: center;
@@ -555,7 +575,7 @@ label{
               width: auto;
               font-size: 2.0rem;
               }
-  .form-label{ font-size: 1.0rem; }            
+  .form-label{ font-size: 1.0rem; }
   .label-text{ font-size: 1.5rem; }
   select{font-size: 1.0rem;
          padding: 10px}
