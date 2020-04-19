@@ -1,14 +1,19 @@
-<% @records.each do |dream| %>
-<% if dream.dream_post.present? %>
-<div class="card">
-  <div class="card-header font-weight-bold">
-    <%= dream.user.user_name %>
+<div class="dream-index">
+  <% @records.each do |dream| %>
+  <% if dream.dream_post.present? %>
+  <div class="card">
+    <div class="card-header font-weight-bold">
+      <%= dream.user.user_name%>
+      <% dream.tags.each do |tag| %>
+      <span class="badge badge-primary"><%= tag.name %></span>
+      <% end %>
+    </div>
+    <div class="card-body text-left">
+      <%= truncate(dream.memo, length: 80) do %>
+      <%= link_to "続きを見る", dream_path(id: dream.id) %>
+      <% end %>
+    </div>
   </div>
-  <div class="card-body text-left">
-    <%= truncate(dream.memo, length: 80) do %>
-    <%= link_to "続きを見る", dream_path(id: dream.id) %>
-    <% end %>
-  </div>
+  <% end %>
+  <% end %>
 </div>
-<% end %>
-<% end %>
