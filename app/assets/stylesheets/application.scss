@@ -531,6 +531,20 @@ label{
 
 // 夢の記録一覧
 .dream-index{
+  .dream-index-title{
+    margin-bottom: 20px;
+    h1{
+      margin: 0;
+      text-align: center;
+    }
+  }
+  .dreams_searchform{
+
+  }
+  .dreams_select{
+    width: auto;
+    color: #FFF;
+  }
   .card-header{
     font-size: 1.5rem
   }

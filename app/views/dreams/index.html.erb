@@ -1,4 +1,17 @@
 <div class="dream-index">
+  <div class="dream-index-title d-flex">
+    <h1>夢の記録一覧</h1>
+    <%= form_tag dreams_path, method: :get, class: 'dreams_searchform ml-auto' do %>
+    <%= select_tag :tag_id,
+    options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
+                                      {
+                                        prompt: 'タグで絞り込む',
+                                        class: 'form-control dreams_select',
+                                        onchange: 'submit(this.form);'
+                                      }
+    %>
+    <% end %>
+  </div>
   <% @records.each do |dream| %>
   <% if dream.dream_post.present? %>
   <div class="card">
@@ -10,10 +23,11 @@
     </div>
     <div class="card-body text-left">
       <%= truncate(dream.memo, length: 80) do %>
-      <%= link_to "続きを見る", dream_path(id: dream.id) %>
+      <%= link_to "続きを見る", dream_path(dream.id) %>
       <% end %>
     </div>
   </div>
   <% end %>
   <% end %>
 </div>
+<%= paginate @records %>
