@@ -97,10 +97,6 @@ h6{
   text-align: center;
 }
 
-i {
-  color: #FFF;
-}
-
 em{
   color: #FFF;
 }
@@ -124,6 +120,14 @@ label{
   color: #FFF;
 }
 
+// deviseエラーメッセージ
+#error_explanation{
+  li{
+    color: red;
+  }
+}
+
+
 // 記録ページのラベル
 .record-label{
   width: 340px;
@@ -142,11 +146,9 @@ label{
 
 
 .btn{
-  background-color: #000016;
   color: #ffffff;
   font-weight: bold;
   border-radius: 8px;
-  box-shadow: 0px 0px 2px;
 }
 
 
@@ -200,9 +202,33 @@ label{
   text-decoration: none;
 }
 
+.nav-item{
+  text-align: center;
+  text-decoration: none;
+}
+
+.user-name{
+  font-size: 2.0em;
+  letter-spacing: -1px;
+  font-weight: bold;
+  color: #FFF;
+  text-shadow: 0 0 5px #01033e,0 0 10px #fff;
+}
+
+.icon-explanation{
+  display: block;
+  font-size: 0.9rem;
+  color: #FFF;
+}
+
+i {
+  color: #FFF;
+  display: block;
+  text-align: center;
+}
+
 li {
     margin-left: 20px;
-    color: red;
     a{
       color: #FFF;
     }
@@ -226,28 +252,6 @@ li {
   border-radius: 15px;
   box-shadow: 0px 0px 5px;
   opacity: 0.9;
-}
-
-// 詳細ページへのボタン
-.btn-show{
-  background-color: #000016;
-  color: #ffffff;
-  font-weight: bold;
-  border-radius: 15px;
-  box-shadow: 0px 0px 5px;
-  opacity: 0.8;
-
-}
-
-// 削除ボタン
-.btn-delete{
-  background-color: #ff0000;
-  color: #ffffff;
-  font-weight: bold;
-  border-radius: 15px;
-  box-shadow: 0px 0px 5px;
-  opacity: 0.8;
-
 }
 
 // ログイン
@@ -318,14 +322,6 @@ li {
   font-weight: bold;
 }
 
-.w-150px{
-  font-size: 20px;
-  font-weight: bold;
-  width: 600px;
-  padding: 20px 40px;
-  margin-top: 40px;
-}
-
 // 入力フォーム2
 .form2-badge{
   color: #FFF;
@@ -336,14 +332,6 @@ li {
   letter-spacing: -2px;
   box-shadow: 0px 0px 5px;
   text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
-}
-
-.w-150px{
-  font-size: 20px;
-  font-weight: bold;
-  width: 600px;
-  padding: 20px 40px;
-  margin-top: 40px;
 }
 
 // 入力フォーム3
@@ -370,13 +358,10 @@ li {
   text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
 }
 
-.w-150px{
-  font-size: 20px;
-  font-weight: bold;
-  width: 600px;
-  padding: 20px 40px;
-  margin-top: 40px;
+.tag-title{
+  color: #FFF;
 }
+
 
 
 // セレクトフォーム
@@ -529,11 +514,14 @@ label{
   box-shadow: 0px 0px 5px;
   opacity: 0.8;
 }
+.btn-post:hover{
+
+}
 
 // 夢の記録一覧
 .dream-index{
   .dream-index-title{
-    margin-bottom: 20px;
+    margin: 20px 0;
     h1{
       margin: 0;
       text-align: center;
@@ -580,6 +568,15 @@ label{
      padding: 0;
  }
  h4{ margin: 30px 0 30px 0;}
+ #error_explanation{
+   h2{font-size: 1.2rem}
+   ul{
+     padding: 0;
+   }
+   li{
+     color: red;
+   }
+ }
  #signup .container #signup-row #signup-column #signup-box{
    margin: 20px 0;
  }
@@ -594,21 +591,33 @@ label{
    }
    td{
      font-size: 0.7rem;
-     padding: 8px;
+     padding: 6px;
      text-align: center;
    }
  }
- .btn-show{ font-size: 0.5rem; }
- .btn-delete{ font-size: 0.5rem; }
- .record-label{padding: 10px;
-              margin: 15px 10px;
+ .btn-sp{ font-size: 0.8rem;
+          padding: 3px 6px;
+ }
+ .record-label{
+              padding: 0;
+              margin: 15px 60px 15px 0;
               width: auto;
               font-size: 2.0rem;
               }
   .form-label{ font-size: 1.0rem; }
   .label-text{ font-size: 1.5rem; }
   select{font-size: 1.0rem;
-         padding: 10px}
+         padding: 10px;
+        }
+  #record_sleep_time_2i{ padding: 6px;}
+  #record_sleep_time_3i{ padding: 6px;}
+  #record_sleep_time_4i{ padding: 6px;}
+  #record_sleep_time_5i{ padding: 6px;}
+
+  #record_getup_time_2i{ padding: 6px;}
+  #record_getup_time_3i{ padding: 6px;}
+  #record_getup_time_4i{ padding: 6px;}
+  #record_getup_time_5i{ padding: 6px;}
   .alert{
     ul{
       padding: 0;
@@ -618,5 +627,34 @@ label{
     font-size: 0.8rem;
   }
   .average-time{font-size: 2.0rem;}
-  .show-title{font-size: 1.9rem;}
+  .show-title{
+              font-size: 1.9rem;
+              margin: 15px 0;
+            }
+  .nav-item{
+    text-align: left;
+  }
+  .card-header{
+    padding: 6px 10px;
+    h5{font-size: 1.5rem;}
+    a{font-size: 0.8rem}
+    .badge{font-size: 0.7rem;}
+  }
+  .card-body{
+    padding: 10px;
+    .card-text{font-size: 0.8rem;}
+    a{font-size: 0.8rem}
+  }
+  .dream-index{
+    h1{font-size: 1.8rem;}
+    .dreams_select{font-size: 0.8rem;
+                   padding: 3px 6px;
+                  }
+  }
+  .dream-detail{
+    .card-header{font-size: 1.8rem;
+      span{font-size: 1.0rem;}
+    }
+    .card-body{font-size: 1.0rem;}
+  }
 }

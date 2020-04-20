@@ -5,12 +5,12 @@
   <div class= "col-md-6">
     <%= form_for @record, url: records_path, metho: :post do |f| %>
     <%= f. hidden_field :user_id %>
-    <div class= "form-label form-group">
+    <div class= "form-label">
       <%= f.label :memo,"夢を記録しよう！", class: "label-text" %><br>
-      <%= f.text_area :memo, class: "form-control"%></br>
     </div>
+    <%= f.text_area :memo, class: "form-control" %></br>
     <div class="form-group">
-      <span>タグ</span>
+      <span class= "tag-title">タグ</span>
       <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
       <div class="form-check">
         <%= tag.label class:'form-check-label' do %>
