@@ -1,6 +1,7 @@
 class RecordsController < ApplicationController
   require 'date'
   before_action :authenticate_user!
+  before_action :set_record, only: %i[show edit update destroy]
   before_action :validates_form1, only: :form2
   before_action :validates_form2, only: :form3
   before_action :validates_form3, only: :form4
@@ -38,7 +39,6 @@ class RecordsController < ApplicationController
   end
 
   def show
-    @record = Record.find(params[:id])
   end
 
   def create
@@ -72,21 +72,18 @@ class RecordsController < ApplicationController
   end
 
   def edit
-    @record = Record.find(params[:id])
   end
 
   def update
-    record = Record.find(params[:id])
-    record.update_attributes(record_params)
-    if record.save
+    @record.update_attributes(record_params)
+    if @record.save
       flash[:notice] = "更新しました"
-      redirect_to record
+      redirect_to @record
     end
   end
 
   def destroy
-    record = Record.find(params[:id])
-    if record.destroy
+    if @record.destroy
       flash[:notice] = "削除しました"
       redirect_to done_records_path
     end
@@ -94,6 +91,10 @@ class RecordsController < ApplicationController
 
 
   private
+
+  def set_record
+    @record = Record.find(params[:id])
+  end
 
   def record_params
     params.require(:record).permit( :'getup_time(1i)',:'getup_time(2i)',

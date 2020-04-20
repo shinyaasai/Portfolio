@@ -5,23 +5,23 @@
 <%= form_for @record , url: form3_records_path, method: :get do |f| %>
   <%= f. hidden_field :user_id %>
   <div class= "form-label">
-  <%= f.label :getup_time,"何時に起きた?", class: "control-label label-text" %><br>
-  <%= f.datetime_select :getup_time,discard_year:true, use_month_numbers:true, class: "form-control form-control-inline"%></br>
+    <%= f.label :getup_time,"何時に起きた?", class: "control-label label-text" %><br>
+    <%= f.datetime_select :getup_time,discard_year:true, use_month_numbers:true, class: "form-control form-control-inline"%></br>
   </div>
   <div class= "form-label">
-  <%= f.label :getout,"どのくらいで布団から出た？", class: "label-text" %><br>
-  <%= f.select :getout, options_for_select({１０分: "１０分", ２０分: "２０分" ,
-                                            ３０分: "３０分", ４０分: "４０分", 
-                                            ５０分: "５０分", ６０分: "６０分", 
-                                            ６０分以上: "６０分以上"}), 
-                                             prompt: "選択してください"%></br>
+    <%= f.label :getout,"どのくらいで布団から出た？", class: "label-text" %><br>
+    <%= f.select :getout, options_for_select(
+                                              {１０分: "１０分", ２０分: "２０分",
+                                               ３０分: "３０分", ４０分: "４０分",
+                                               ５０分: "５０分", ６０分: "６０分",
+                                               ６０分以上: "６０分以上"}
+                                            ), prompt: "選択してください"%></br>
   </div>
   <div class= "form-label">
-  <%= f.label :sun,"朝日を浴びた？", class: "label-text" %><br>
-  <%= f.select :sun, options_for_select({浴びた: "浴びた", 浴びていない: "浴びていない"}), prompt: "選択してください"%></br>
+    <%= f.label :sun,"朝日を浴びた？", class: "label-text" %><br>
+    <%= f.select :sun, options_for_select({浴びた: "浴びた", 浴びていない: "浴びていない"}), prompt: "選択してください"%></br>
   </div>
-  
   <div class="text-center">
-  <%= f.submit '次へ', class: "btn btn-outline-dark btn-next" %>
+    <%= f.submit '次へ', class: "btn btn-outline-dark btn-next" %>
   </div>
 <% end %>

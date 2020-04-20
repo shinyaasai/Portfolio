@@ -5,13 +5,14 @@
 <%= form_for @record , url: form4_records_path, method: :get do |f| %>
   <%= f. hidden_field :user_id %>
   <div class= "form-label">
-  <%= f.label :sleepiness,"元気に過ごせた？", class: "label-text" %><br>
-  <%= f.select :sleepiness, options_for_select({元気に過ごせた: "元気に過ごせた", 
-                                                少し眠気があった: "少し眠気があった",
-                                                １日中眠気があった: "１日中眠気があった"}),
-                                                 prompt: "選択してください"%></br>
+    <%= f.label :sleepiness,"元気に過ごせた？", class: "label-text" %><br>
+    <%= f.select :sleepiness, options_for_select(
+                                                  {元気に過ごせた: "元気に過ごせた",
+                                                   少し眠気があった: "少し眠気があった",
+                                                   １日中眠気があった: "１日中眠気があった"}
+                                                ), prompt: "選択してください"%></br>
   </div>
   <div class="text-center">
-  <%= f.submit '次へ', class: "btn btn-outline-dark btn-next" %>
+    <%= f.submit '次へ', class: "btn btn-outline-dark btn-next" %>
   </div>
 <% end %>
