@@ -32,8 +32,8 @@
       <tr>
         <td><%= record.sleep_time.to_s(:date_jp) %>〜</br><%= record.getup_time.to_s(:date_jp)%></td>
         <td><%=(( record.getup_time -  record.sleep_time) / 3600).to_f.floor(1) %> 時間</td>
-        <td><%= link_to '詳細', record , class: "btn btn-show" %></td>
-        <td><%= link_to '削除', record , class: "btn btn-delete", method: :delete %></td>
+        <td><%= link_to '詳細', record , class: "btn btn-info btn-sp" %></td>
+        <td><%= link_to '削除', record , class: "btn btn-danger btn-sp", method: :delete %></td>
       </tr>
     <% end %>
   </tbody>

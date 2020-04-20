@@ -1,32 +1,36 @@
 <header>
   <nav  class="navbar fixed-top navbar-dark navbar-expand-md">
   <div class="container">
-    <%= link_to Time.current.to_s(:datetime_jp), "/", id:"logo"%>
+    <span class="user-name"><%= current_user.user_name%>さん</span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      
+
       <!--パソコン表示-->
       <ul class="nav navbar-nav pc">
         <li class="nav-item active"><%= link_to form1_records_path do %>
             <i class="far fa-edit fa-2x"></i>
             <% end %>
+            <span class="icon-explanation">記録する</span>
         </li>
         <li class="nav-item"><%= link_to done_records_path do %>
             <i class="far fa-list-alt fa-2x"></i>
             <% end %>
+            <span class="icon-explanation">睡眠記録</span>
         </li>
         <li class="nav-item"><%= link_to edit_user_registration_path do%>
             <i class="far fa-user fa-2x"></i>
             <% end %>
+              <span class="icon-explanation">アカウント</span>
         </li>
         <li class="nav-item"><%= link_to destroy_user_session_path, method: :delete do %>
             <i class="fas fa-sign-out-alt fa-2x"></i>
             <% end %>
+            <span class="icon-explanation">ログアウト</span>
         </li>
       </ul>
-      
+
       <!--スマホ表示-->
       <ul class="nav navbar-nav sp">
         <li class="nav-item active"><%= link_to "記録する", form1_records_path %> </li>
@@ -34,9 +38,8 @@
         <li class="nav-item"><%= link_to "アカウント編集", edit_user_registration_path %></li>
         <li class="nav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
       </ul>
-      
+
     </div>
   </div>
   </nav>
 </header>
-
