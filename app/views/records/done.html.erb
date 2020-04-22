@@ -1,3 +1,4 @@
+<% provide(:title, "睡眠記録") %>
 <% @records.each do |record| %>
   <% @average += (( record.getup_time -  record.sleep_time) / 3600).to_f.floor(1) / @records.count %>
 <% end %>
