@@ -1,0 +1,13 @@
+<footer class="pt-5">
+  <div class="fixed-bottom">
+    <div class="container ">
+      <% if current_page?(controller: "records", action: "done") %>
+      <div class="dreams_path_position">
+        <span class="logo-name" id="logo">SleepApp</span>
+        <%= link_to "みんなが投稿した夢の記録をみてみよう！", dreams_path, class: "dream_index_link" %>
+        </div>
+      <% else %>
+        <span class="logo-name" id="logo">SleepApp</span>
+      <% end %>
+  </div>
+</footer>

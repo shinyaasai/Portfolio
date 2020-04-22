@@ -1,0 +1,79 @@
+<%= form_with(model: @record, locale: true) do |f| %>
+<%= f. hidden_field :user_id %>
+<tr>
+  <div class= "form-group">
+  <th>
+    <%= f.label :sleep_time, "就寝時間" %>
+  </th>
+  <td>
+    <%= f.datetime_select :sleep_time,discard_year:true, use_month_numbers:true, class: "form-control form-control-inline" %>
+  </td>
+</tr>
+<tr>
+  <th>
+    <%= f.label :getup_time,"起床時間" %>
+  </th>
+  <td>
+    <%= f.datetime_select :getup_time,discard_year:true, use_month_numbers:true, class: "form-control form-control-inline" %>
+  </td>
+</tr>
+<tr>
+  <th>
+    <%= f.label :medicine,"寝るための薬は飲みましたか？" %>
+  </th>
+   <td>
+    <%= f.select :medicine, options_for_select({飲んだ: "飲んだ", 飲んでいない: "飲んでいない"}) %>
+   </td>
+ </tr>
+ <tr>
+   <th><%= f.label :awakening,"途中で目が覚めた?" %></th>
+  <td>
+    <%= f.select :awakening, options_for_select({起きた: "起きた" , 起きていない: "起きていない"}) %>
+  </td>
+</tr>
+<tr>
+  <th>
+    <%= f.label :getout,"どのくらいで布団から出た？" %>
+  </th>
+  <td>
+     <%= f.select :getout, options_for_select(
+                                              {１０分: "１０分", ２０分: "２０分" ,
+                                               ３０分: "３０分", ４０分: "４０分",
+                                               ５０分: "５０分", ６０分: "６０分",
+                                               ６０分以上: "６０分以上"
+                                              }
+                                             )
+    %>
+  </td>
+</tr>
+<tr>
+  <th>
+    <%= f.label :sun,"朝日を浴びた？"%>
+  </th>
+  <td>
+    <%= f.select :sun, options_for_select({浴びた: "浴びた", 浴びていない: "浴びていない"})%>
+  </td>
+ </tr>
+ <tr>
+   <th>
+     <%= f.label :sleepiness,"日中の眠気" %>
+   </th>
+ 　<td>
+ 　   <%= f.select :sleepiness, options_for_select(
+                                                   {元気に過ごせた: "元気に過ごせた",
+                                                    少し眠気があった: "少し眠気があった",
+                                                    １日中眠気があった: "１日中眠気があった"
+                                                   }
+                                                  )
+      %>
+ 　</td>
+ </tr>
+</table>
+<div class="card">
+<div class="card-header">
+  <%= f.label :memo,"夢を記録しよう！", class: "text-dark" %>
+</div>
+</div>
+  <%= f.text_area :memo, class: "form-control" %></br>
+<%= f.submit "更新", class:"btn btn-dark" %>
+<% end %>-->

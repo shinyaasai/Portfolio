@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-header">
+    <div class="d-flex">
+      <h5>夢の記録</h5>
+      <div id= "dream-post">
+        <% if @record.dream_post_by(current_user).present? %>
+        <%= link_to "投稿を取り消す", record_dream_post_path(@record.id, @record.dream_post_by(current_user)), method: :DELETE, remote: true, class: "btn btn-posted btn-outline-danger" %>
+        <% else %>
+        <%= link_to "投稿する", record_dream_posts_path(@record), method: :POST, remote: true, class: "btn btn-post btn-outline-info " %>
+        <% end %>
+      </div>
+    </div>
+    <% @record.tags.each do |tag| %>
+    <span class="badge badge-primary"><%= tag.name %></span>
+    <% end %>
+  </div>
+  <div class="card-body">
+    <% if @record.memo.empty? %>
+    <h6>記録がありません</h6>
+    <%= link_to "みんなの夢を見てみよう！", dreams_path %>
+    <% else %>
+    <p class="card-text"><%= truncate(@record.memo, length: 80) %></p>
+    <p class="text-right font-weight-bold mr-10">
+      <%= link_to "みんなの夢を見てみよう！", dreams_path %>
+    </div>
+    <% end %>
+  </div>

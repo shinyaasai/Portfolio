@@ -1,0 +1,30 @@
+<table class="table center show-table">
+  <tr>
+    <th>就寝時間</th>
+    <td><%= @record.sleep_time.to_s(:datetime_jp)%></td>
+  </tr>
+  <tr>
+    <th>起床時間</th>
+    <td><%= @record.getup_time.to_s(:datetime_jp)%></td>
+  </tr>
+  <tr>
+    <th>薬を飲んだ</th>
+    <td><%= @record.medicine %></td>
+  </tr>
+  <tr>
+    <th>夜中に目が覚めた</th>
+    <td><%= @record.awakening %></td>
+  </tr>
+  <tr>
+    <th>布団から出るまで</th>
+    <td><%= @record.getout %></td>
+  </tr>
+  <tr>
+    <th>朝日を浴びた</th>
+    <td><%= @record.sun %></td>
+  </tr>
+  <tr>
+    <th>日中の眠気</th>
+    <td><%= @record.sleepiness %></td>
+  </tr>
+</table>

@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>SleepRecordApp</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0>
-    <%= csrf_meta_tags %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>SleepRecordApp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= csrf_meta_tags %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <% if user_signed_in? %>
-    <%= render 'layouts/login_header' %>
-    <% else %>
-    <%= render 'layouts/no_login_header' %>
-    <% end %>
-    <div class="container">
+<body>
+  <% if user_signed_in? %>
+  <%= render 'layouts/login_header' %>
+  <% else %>
+  <%= render 'layouts/no_login_header' %>
+  <% end %>
+  <div class="container">
     <%= render 'layouts/notifications' %>
     <%= yield %>
-    </div>
-  </body>
+  </div>
+  <% if user_signed_in? %>
+  <%= render 'layouts/footer' %>
+  <% end %>
+</body>
 </html>
