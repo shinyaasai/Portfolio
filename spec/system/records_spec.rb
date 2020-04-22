@@ -64,6 +64,11 @@ RSpec.describe "Records", type: :system do
       expect(page).to have_content "睡眠記録"
     end
 
+    it "footerが正しく表示される" do
+      within ".footer"
+      expect(page).to have_content "みんなが投稿した夢の記録をみてみよう！"
+    end
+
     it "登録した日付が表示される" do
       expect(page).to have_content "#{@record.sleep_time.to_s(:date_jp)}〜\n#{@record.getup_time.to_s(:date_jp)}"
     end
@@ -99,6 +104,11 @@ RSpec.describe "Records", type: :system do
       fill_in "パスワード", with: user.password
       click_button "ログイン"
       click_link ("詳細")
+    end
+
+    it "footerに一覧ページ飲みで表示するものは表示されないこと" do
+      within ".footer"
+      expect(page).to_not have_content "みんなが投稿した夢の記録をみてみよう！"
     end
 
     it "ページが正しく表示される" do
