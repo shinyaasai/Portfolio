@@ -197,7 +197,7 @@ footer{
     font-family: 'M PLUS 1p', sans-serif;
     }
   #logo {
-    float: left;
+    text-align: center;
     margin-right: 10px;
     font-size: 2.0em;
     color: #fff;
@@ -206,6 +206,23 @@ footer{
   }
 
   #logo:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  .dreams_path_position{
+    position: relative;
+  }
+  .dream_index_link{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #fff;
+    letter-spacing: -1px;
+    font-weight: bold;
+  }
+  .dream_index_link:hover{
     color: #fff;
     text-decoration: none;
   }
