@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'statics_pages#home'
   resources :records do
     resources :dream_posts, only:[:create, :destroy]
+    resources :comments, only:[:create, :destroy]
     collection do
       get 'form1'
       get 'form2'

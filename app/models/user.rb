@@ -8,4 +8,5 @@ class User < ApplicationRecord
 
   has_many :records, dependent: :delete_all
   has_many :dream_posts, dependent: :delete_all
+  has_many :comments
 end

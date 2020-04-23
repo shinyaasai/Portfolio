@@ -4,7 +4,7 @@
     <div class="card-header font-weight-bold">
       <%= @user_name %><span><%= @record.sleep_time.to_s(:date_jp) %></span>
       <% @record.tags.each do |tag| %>
-        <div class="badge badge-primary"><%= tag.name %></div>
+      <div class="badge badge-primary"><%= tag.name %></div>
       <% end %>
     </div>
     <div class="card-body text-left">
@@ -12,3 +12,25 @@
     </div>
   </div>
 </div>
+<div class="row parts" id="comment-form-post-<%= @record.id.to_s %>">
+  <%= form_with model: [@record, Comment.new] do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :record_id, value: @record.id %>
+  <%= f.text_field :comment, class: "form-controlo comment-input border-0", placeholder: "コメント...", autocomplete: :off %>
+  <%= f.submit '送信', class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<% @record.comments.each do |comment| %>
+<div class="mb-2">
+  <% if comment.user == current_user %>
+  <%= link_to "", "#", method: :delete, remote: true, class: "delete-comment" %>
+  <% end %>
+  <span>
+    <strong>
+     
+    </strong>
+  </span>
+  <span><%= comment.comment %></span>
+</div>
+<% end %>
