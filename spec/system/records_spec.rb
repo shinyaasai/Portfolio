@@ -108,7 +108,7 @@ RSpec.describe "Records", type: :system do
 
     it "footerに一覧ページ飲みで表示するものは表示されないこと" do
       within ".footer"
-      expect(page).to_not have_content "みんなが投稿した夢の記録をみてみよう！"
+      expect(page).not_to have_content "みんなが投稿した夢の記録をみてみよう！"
     end
 
     it "ページが正しく表示される" do
@@ -123,7 +123,7 @@ RSpec.describe "Records", type: :system do
     end
 
     it "編集ボタンから更新をすることができる" do
-      click_link ("編集")
+      click_on "編集"
       expect(page).to have_content "の記録"
       select "2", from: 'record[sleep_time(2i)]'
       select "2", from: 'record[sleep_time(3i)]'

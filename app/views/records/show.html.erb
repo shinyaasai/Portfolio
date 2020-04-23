@@ -1,3 +1,4 @@
+<% provide(:title, "#{@record.sleep_time.to_s(:date_jp)}~#{@record.getup_time.to_s(:date_jp)}") %>
 <h1 class="show-title">
   <%= @record.sleep_time.to_s(:date_jp) %>~<%= @record.getup_time.to_s(:date_jp)%>の記録
 </h1>
