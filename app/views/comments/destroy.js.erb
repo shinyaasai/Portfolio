@@ -1,0 +1,2 @@
+$('#comment-post-<%= @record.id.to_s %>').
+  html('<%= j render "dreams/comment_list", { record: @record } %>');

@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @record = @comment.record
     if @comment.save
-      flash[:notice] = "コメントしました"
+      respond_to :js
     else
       flash[:alert] = "コメントに失敗しました"
     end

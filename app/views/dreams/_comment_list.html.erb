@@ -1,0 +1,13 @@
+<% record.comments.each do |comment| %>
+<div class="mb-2">
+  <% if comment.user == current_user %>
+  <%= link_to "削除", record_comment_path(record.id, comment), method: :delete, remote: true, class: "delete-comment" %>
+  <% end %>
+  <span>
+    <strong>
+      <%= comment.user.user_name %>
+    </strong>
+  </span>
+  <span><%= comment.comment %></span>
+</div>
+<% end %>
