@@ -77,8 +77,8 @@ RSpec.describe "Records", type: :system do
 
 
   describe "睡眠記録の詳細ページ" do
-    let(:record) { create(:record) }
-    
+    let!(:record) { create(:record) }
+
     before do
       visit root_path
       click_link "ログイン"

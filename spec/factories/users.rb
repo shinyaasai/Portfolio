@@ -1,14 +1,7 @@
 FactoryBot.define do
   factory :user do
-    user_name "ボブ"
-    email "bobishandsum@example.com"
-    password "bobisplaingsoccer"
+    user_name "ボブソン"
+    email "bobsonishandsum@example.com"
+    password "bobsonisplaingsoccer"
   end
-
-  # factory :user do
-  #   user_name "ナンシー"
-  #   email "nancyiscute@example.com"
-  #   password "nansyisplayingtennis"
-  #   association :record, factory: :u
-  # end
 end
