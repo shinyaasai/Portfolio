@@ -576,10 +576,37 @@ label{
 
       }
   }
+  .card_dream_show{
+    margin-top: 30px;
+  }
   .card-body{
     font-size: 1.5rem;
     text-align: justify;
     letter-spacing: 3px;
+  }
+}
+
+// コメント
+.comment_item{
+  strong{
+    font-size: 2.0em;
+    letter-spacing: -2px;
+    color: #FFF;
+  	text-shadow: 0 0 3px #0000ff,0 0 7px #fff;
+    margin-right: 10px;
+  }
+  .comment_font_size{
+    color: #FFF
+  }
+  .comment_bottomline{
+    text-align: right;
+    border-bottom: 2px solid #dfdfdf;
+  }
+  .comment_update_time{
+    color: #c0c0c0;
+  }
+  .delete-comment{
+    color: red;
   }
 }
 
@@ -675,7 +702,7 @@ label{
   }
   .card-body{
     padding: 10px;
-    .card-text{font-size: 0.8rem;}
+    .card-text{font-size: 0.6rem;}
     a{font-size: 0.8rem}
   }
   .dream-index{
@@ -689,5 +716,34 @@ label{
       span{font-size: 1.0rem;}
     }
     .card-body{font-size: 1.0rem;}
+  }
+  .card_dream_show_sp{
+    margin-top: 20px
+  }
+  // コメント
+  .comment_item{
+    strong{
+      font-size: 1.3em;
+      letter-spacing: -2px;
+      color: #FFF;
+    	text-shadow: 0 0 3px #0000ff,0 0 5px #fff;
+      margin-right: 10px;
+    }
+    .comment_font_size{
+      font-size: 0.8rem;
+      color: #FFF
+    }
+    .comment_bottomline{
+      text-align: right;
+      border-bottom: 1px solid #dfdfdf;
+    }
+    .comment_update_time{
+      color: #c0c0c0;
+      font-size: 0.6rem;
+    }
+    .delete-comment{
+      color: red;
+      font-size: 0.6rem;
+    }
   }
 }

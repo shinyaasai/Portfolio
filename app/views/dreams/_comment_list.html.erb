@@ -1,13 +1,16 @@
-<% record.comments.each do |comment| %>
-<div class="mb-2">
-  <% if comment.user == current_user %>
-  <%= link_to "削除", record_comment_path(record.id, comment), method: :delete, remote: true, class: "delete-comment" %>
+<div class="comment_item mb-2">
+  <% record.comments.each do |comment| %>
+    <span>
+      <strong>
+        <%= comment.user.user_name %>
+      </strong>
+    </span>
+    <span class="comment_font_size"><%= comment.comment %></span>
+    <div class="comment_bottomline">
+      <span class="comment_update_time"><%= comment.created_at.to_s(:datetime_jp) %></span>
+      <% if comment.user == current_user %>
+        <%= link_to "削除", record_comment_path(record.id, comment), method: :delete, remote: true, class: "delete-comment" %>
+      <% end %>
+    </div>
   <% end %>
-  <span>
-    <strong>
-      <%= comment.user.user_name %>
-    </strong>
-  </span>
-  <span><%= comment.comment %></span>
 </div>
-<% end %>
