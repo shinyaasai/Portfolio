@@ -118,6 +118,7 @@ a{
 
 label{
   color: #FFF;
+  margin: 10px 0;
 }
 
 // deviseエラーメッセージ
@@ -132,7 +133,7 @@ label{
 .record-label{
   width: 340px;
   background: #052657;
-  margin: 30px 0 20px 0;
+  margin-top: 30px;
   padding: 10px 20px;
   font-size: 2.5em;
   letter-spacing: -2px;
@@ -436,7 +437,18 @@ label{
   }
 }
 
+
 // 一覧ページ
+.sleep_record_index{
+  h1{
+    font-size: 3.0rem;
+    margin: 30px 0 15px 0;
+    letter-spacing: -2px;
+    text-align: left;
+    color: #FFF;
+     text-shadow: 0 0 5px #0000ff,0 0 8px #fff;
+  }
+}
 .record{
   h1{
     margin: 30px 0 30px 0;
@@ -616,26 +628,43 @@ label{
 @media only screen and (max-width: 750px) {
 .pc { display: none !important; }
 .sp { display: block !important; }
+
+ h1{
+   font-size: 1.6rem;
+   margin: 15px 0 7px 0;
+   letter-spacing: -2px;
+   text-align: left;
+   color: #FFF;
+ 	 text-shadow: 0 0 5px #0000ff,0 0 8px #fff;
+ }
+
 #title{ margin: 30px 0 60px 0; }
+
  h3{ margin-top: 10px;
      padding: 0;
  }
+
  h4{ margin: 30px 0 30px 0;}
+
  #error_explanation{
    h2{font-size: 1.2rem}
-   ul{
-     padding: 0;
-   }
-   li{
-     color: red;
-   }
+   ul{padding: 0;}
+   li{color: red;}
  }
+
+ .page-link{
+   font-size: 0.6rem;
+   padding: 2px 4px;
+ }
+
  #signup .container #signup-row #signup-column #signup-box{
    margin: 20px 0;
  }
+
  #login .container #login-row #login-column #login-box {
    margin: 20px 0;
  }
+
  .table{
    th{ text-align: center;
        font-size: 0.9rem;
@@ -648,24 +677,33 @@ label{
      text-align: center;
    }
  }
+
  .btn-sp{ font-size: 0.8rem;
           padding: 3px 6px;
  }
+
  .btn-next{
             margin-top: 7px;
             padding: 3px 6px;
   }
+.record-form1{
+
+}
  .record-label{
               padding: 0;
-              margin: 15px 60px 15px 0;
+              margin: 15px 60px 0 0;
               width: auto;
               font-size: 1.8rem;
               }
+
   .form-label{ font-size: 1.0rem; }
+
   .label-text{ font-size: 1.3rem; }
+
   select{font-size: 1.0rem;
          padding: 10px;
         }
+
   #record_sleep_time_2i{ padding: 6px;}
   #record_sleep_time_3i{ padding: 6px;}
   #record_sleep_time_4i{ padding: 6px;}
@@ -675,51 +713,70 @@ label{
   #record_getup_time_3i{ padding: 6px;}
   #record_getup_time_4i{ padding: 6px;}
   #record_getup_time_5i{ padding: 6px;}
-  .alert{
-    ul{
-      padding: 0;
+  .record_detail{
+    margin-bottom: 15px;
+    .card-header{
+      h5{font-size: 1.5rem;}
+    }
+    .card-body{
+      h6{font-size: 1.2rem;}
+      a{float: right;}
     }
   }
-  p{
-    font-size: 0.8rem;
+  .alert{
+    ul{padding: 0;}
   }
+  p{font-size: 0.8rem;}
+
   .average-time{font-size: 2.0rem;}
+
   .show-title{
-              font-size: 1.9rem;
+              font-size: 1.5rem;
               margin: 15px 0;
             }
-  .nav-item{
-    text-align: left;
-  }
-  .dreams_path_position{
-    display: none;
-  }
+
+  .nav-item{text-align: left;}
+
+  .dreams_path_position{display: none;}
+
   .card-header{
+    font-size: 1.0rem;
     padding: 6px 10px;
     h5{font-size: 1.5rem;}
     a{font-size: 0.8rem}
     .badge{font-size: 0.7rem;}
   }
+
   .card-body{
     padding: 10px;
     .card-text{font-size: 0.6rem;}
     a{font-size: 0.8rem}
   }
+
   .dream-index{
-    h1{font-size: 1.8rem;}
-    .dreams_select{font-size: 0.8rem;
-                   padding: 3px 6px;
-                  }
+    h1{font-size: 1.5rem;}
+    .dreams_select{
+                  font-size: 0.6rem;
+                  padding: 3px 6px;
+    }
+    .card-header{
+                  font-size: 1.2rem;
+                  font-weight: bold;
+    }
+    .card-body{font-size: 0.8rem}
   }
+
   .dream-detail{
-    .card-header{font-size: 1.8rem;
+    .card-header{font-size: 1.5rem;
       span{font-size: 1.0rem;}
     }
-    .card-body{font-size: 1.0rem;}
+    .card-body{font-size: 0.8rem;}
   }
+
   .card_dream_show_sp{
     margin-top: 20px
   }
+
   // コメント
   .comment_item{
     strong{

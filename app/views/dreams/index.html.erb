@@ -6,7 +6,7 @@
     <%= select_tag :tag_id,
     options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
                                       {
-                                        prompt: 'タグで絞り込む',
+                                        prompt: 'タグで検索',
                                         class: 'form-control dreams_select',
                                         onchange: 'submit(this.form);'
                                       }

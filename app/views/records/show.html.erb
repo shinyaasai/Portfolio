@@ -1,9 +1,11 @@
 <% provide(:title, "#{@record.sleep_time.to_s(:date_jp)}~#{@record.getup_time.to_s(:date_jp)}") %>
-<h1 class="show-title">
+<div class="record_detail">
+  <h1 class="show-title">
   <%= @record.sleep_time.to_s(:date_jp) %>~<%= @record.getup_time.to_s(:date_jp)%>の記録
-</h1>
+  </h1>
 <div class="right">
-  <%= link_to "編集", edit_record_path, data: {"turbolinks" => false}, class: "btn btn-primary" %>
+<%= link_to "編集", edit_record_path, data: {"turbolinks" => false}, class: "btn btn-primary" %>
 </div>
 <%= render 'record_table', record: @record %>
 <%= render 'dream_record', record: @record %>
+</div>
