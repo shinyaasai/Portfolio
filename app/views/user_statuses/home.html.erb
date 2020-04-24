@@ -1,0 +1,18 @@
+<div class="center">
+  <% @records.each do |record| %>
+    <% @average += (( record.getup_time -  record.sleep_time) / 3600).to_f.floor(1) / @records.count %>
+  <% end %>
+  <% if @records.count > 10 || @average < 5.0 %>
+    <%= image_tag '', alt: "子供睡眠不足" %>
+  <% elsif @records.count > 10 || @average > 5.0 %>
+    <%= image_tag '', alt: "子供元気な画像" %>
+  <% elsif @records.count > 20 || @average < 5.0 %>
+    <%= image_tag '', alt: "大人睡眠不足画像" %>
+  <% elsif @records.count > 20 || @average > 5.0 %>
+    <%= image_tag '', alt: "ダンディおじさん画像" %>
+  <% elsif @records.count < 10 || @average < 5.0 %>
+    <%= image_tag '', alt: "赤ちゃん睡眠不足画像" %>
+  <% else %>
+    <%= image_tag '/images/default.png' %>
+  <% end %>
+</div>

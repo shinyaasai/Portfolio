@@ -1,7 +1,7 @@
 <header>
   <nav  class="navbar fixed-top navbar-dark navbar-expand-md">
   <div class="container">
-    <span class="user-name"><%= current_user.user_name%>さん</span>
+    <span class="user-name"><%=link_to "#{current_user.user_name}さん", user_statuses_home_path %></span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
     </button>
