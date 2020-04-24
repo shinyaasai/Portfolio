@@ -1,18 +1,30 @@
-<div class="center">
-  <% @records.each do |record| %>
+<div class="image_box mt-5">
+  <div class="center">
+    <% @records.each do |record| %>
     <% @average += (( record.getup_time -  record.sleep_time) / 3600).to_f.floor(1) / @records.count %>
-  <% end %>
-  <% if @records.count > 10 || @average < 5.0 %>
-    <%= image_tag '', alt: "子供睡眠不足" %>
-  <% elsif @records.count > 10 || @average > 5.0 %>
+    <% end %>
+    <p>あなたの平均睡眠時間は<span class="average-time"><%= @average.to_f.floor(1) %></span>時間です</p>
+    <% if @records.count > 10 || @average < 5.0 %>
+    <%= image_tag '/images/default.png', alt: "子供睡眠不足" %>
+    <p><span class="image_explanation">睡眠時間が短いようです</span><p>
+    <% elsif @records.count > 10 || @average > 5.0 %>
     <%= image_tag '', alt: "子供元気な画像" %>
-  <% elsif @records.count > 20 || @average < 5.0 %>
+    <p><span class="image_explanation">しっかり睡眠が取れています♪</span><p>
+    <% elsif @records.count > 20 || @average < 5.0 %>
     <%= image_tag '', alt: "大人睡眠不足画像" %>
-  <% elsif @records.count > 20 || @average > 5.0 %>
+    <p><span class="image_explanation">睡眠時間が短いようです</span><p>
+    <% elsif @records.count > 20 || @average > 5.0 %>
     <%= image_tag '', alt: "ダンディおじさん画像" %>
-  <% elsif @records.count < 10 || @average < 5.0 %>
+    <p><span class="image_explanation">パーフェクト!!</span><p>
+    <% elsif @records.count < 10 || @average < 5.0 %>
     <%= image_tag '', alt: "赤ちゃん睡眠不足画像" %>
-  <% else %>
+    <p><span class="image_explanation">睡眠時間が短いようです</span><p>
+    <% else %>
     <%= image_tag '/images/default.png' %>
-  <% end %>
+    <p><span class="image_explanation">記録した回数や睡眠時間で</br>キャラクターが変化するよ！</span><p>
+    <% end %>
+  </div>
+</div>
+<div class="center">
+  <%= link_to "記録を始める", form1_records_path, class: "btn btn-lg btn-index" %>
 </div>
