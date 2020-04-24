@@ -6,29 +6,13 @@
     <%= select_tag :tag_id,
     options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
                                       {
-                                        prompt: 'タグで絞り込む',
+                                        prompt: 'タグで検索',
                                         class: 'form-control dreams_select',
                                         onchange: 'submit(this.form);'
                                       }
     %>
     <% end %>
   </div>
-  <% @records.each do |dream| %>
-  <% if dream.dream_post.present? %>
-  <div class="card">
-    <div class="card-header font-weight-bold">
-      <%= dream.user.user_name%>
-      <% dream.tags.each do |tag| %>
-      <span class="badge badge-primary"><%= tag.name %></span>
-      <% end %>
-    </div>
-    <div class="card-body text-left">
-      <%= truncate(dream.memo, length: 80) do %>
-      <%= link_to "続きを見る", dream_path(dream.id) %>
-      <% end %>
-    </div>
-  </div>
-  <% end %>
-  <% end %>
+  <%= render 'search_tag', records: @records %>
 </div>
 <%= paginate @records %>

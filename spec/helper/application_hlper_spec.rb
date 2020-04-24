@@ -4,14 +4,6 @@ RSpec.describe"ApplicationHelper", type: :helper do
   include ApplicationHelper
   let(:record) { create(:record) }
 
-  # before do
-  #   visit root_path
-  #   click_link "ログイン"
-  #   fill_in "メールアドレス", with: record.user.email
-  #   fill_in "パスワード", with: record.user.password
-  #   click_button "ログイン"
-  # end
-
   describe "full_titleヘルパー" do
     context "page_titleが空の場合" do
       it "base_titleを返すこと" do

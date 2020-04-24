@@ -41,22 +41,13 @@ RSpec.describe "Records", type: :system do
   end
 
   describe "睡眠記録一覧ページ" do
+    let(:record) { create(:record) }
+
     before do
-      user = create(:user)
-      @record = user.records.create(
-        getup_time: Time.current,
-        sleep_time: Time.current,
-        medicine: "飲んだ",
-        awakening: "起きた",
-        getout: "１０分",
-        sun: "浴びた",
-        sleepiness: "元気に過ごせた",
-        memo: "テスト"
-      )
       visit root_path
       click_link "ログイン"
-      fill_in "メールアドレス", with: user.email
-      fill_in "パスワード", with: user.password
+      fill_in "メールアドレス", with: record.user.email
+      fill_in "パスワード", with: record.user.password
       click_button "ログイン"
     end
 
@@ -70,11 +61,11 @@ RSpec.describe "Records", type: :system do
     end
 
     it "登録した日付が表示される" do
-      expect(page).to have_content "#{@record.sleep_time.to_s(:date_jp)}〜\n#{@record.getup_time.to_s(:date_jp)}"
+      expect(page).to have_content "#{record.sleep_time.to_s(:date_jp)}〜\n#{record.getup_time.to_s(:date_jp)}"
     end
 
-    it "睡眠時間が表示される" do
-      expect(page).to have_content (( @record.getup_time -  @record.sleep_time) / 3600).to_f.floor(1)
+    it "平均睡眠時間が表示される" do
+      expect(page).to have_content (( record.getup_time -  record.sleep_time) / 3600).to_f.floor(1)
     end
 
     it "削除ボタンを押すと記録が削除される" do
@@ -86,40 +77,31 @@ RSpec.describe "Records", type: :system do
 
 
   describe "睡眠記録の詳細ページ" do
+    let!(:record) { create(:record) }
+
     before do
-      user = create(:user)
-      @record = user.records.create(
-        getup_time: Time.current,
-        sleep_time: Time.current,
-        medicine: "飲んだ",
-        awakening: "起きた",
-        getout: "１０分",
-        sun: "浴びた",
-        sleepiness: "元気に過ごせた",
-        memo: "テスト"
-      )
       visit root_path
       click_link "ログイン"
-      fill_in "メールアドレス", with: user.email
-      fill_in "パスワード", with: user.password
+      fill_in "メールアドレス", with: record.user.email
+      fill_in "パスワード", with: record.user.password
       click_button "ログイン"
       click_link ("詳細")
     end
 
-    it "footerに一覧ページ飲みで表示するものは表示されないこと" do
+    it "footerに一覧ページのみで表示するものは表示されないこと" do
       within ".footer"
       expect(page).not_to have_content "みんなが投稿した夢の記録をみてみよう！"
     end
 
     it "ページが正しく表示される" do
       expect(page).to have_content 'の記録'
-      expect(page).to have_content @record.getup_time.to_s(:datetime_jp)
-      expect(page).to have_content @record.sleep_time.to_s(:datetime_jp)
-      expect(page).to have_content @record.medicine
-      expect(page).to have_content @record.awakening
-      expect(page).to have_content @record.getout
-      expect(page).to have_content @record.sun
-      expect(page).to have_content @record.memo
+      expect(page).to have_content record.getup_time.to_s(:datetime_jp)
+      expect(page).to have_content record.sleep_time.to_s(:datetime_jp)
+      expect(page).to have_content record.medicine
+      expect(page).to have_content record.awakening
+      expect(page).to have_content record.getout
+      expect(page).to have_content record.sun
+      expect(page).to have_content record.memo
     end
 
     it "編集ボタンから更新をすることができる" do

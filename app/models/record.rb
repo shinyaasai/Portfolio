@@ -4,6 +4,7 @@ class Record < ApplicationRecord
   has_one :dream_post
   has_many :record_tag_relations, dependent: :delete_all
   has_many :tags, through: :record_tag_relations
+  has_many :comments, dependent: :delete_all
 
   validates :getup_time, presence: true
   validates :sleep_time, presence: true

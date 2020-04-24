@@ -1,14 +1,18 @@
 <% provide(:title, "#{@user_name}さんの夢") %>
 <div class="dream-detail">
-  <div class="card">
+  <div class="card card_dream_show card_dream_show_sp">
     <div class="card-header font-weight-bold">
       <%= @user_name %><span><%= @record.sleep_time.to_s(:date_jp) %></span>
       <% @record.tags.each do |tag| %>
-        <div class="badge badge-primary"><%= tag.name %></div>
+      <div class="badge badge-primary"><%= tag.name %></div>
       <% end %>
     </div>
-    <div class="card-body text-left">
+    <div class="card-body text-left card_body_text_sp">
       <%= @record.memo %>
     </div>
   </div>
+</div>
+<%= render 'comment_form_box', record: @record %>
+<div id="comment-post-<%= @record.id.to_s %>">
+<%= render 'comment_list', record: @record %>
 </div>

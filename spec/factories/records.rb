@@ -7,6 +7,7 @@ FactoryBot.define do
     getout "１０分"
     sun "浴びた"
     sleepiness "元気に過ごせた"
+    memo "HelloWorld"
     association :user, factory: :user
   end
 
