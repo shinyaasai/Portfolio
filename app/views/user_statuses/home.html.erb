@@ -1,27 +1,29 @@
 <div class="image_box mt-5">
   <div class="center">
     <% @records.each do |record| %>
-    <% @average += (( record.getup_time -  record.sleep_time) / 3600).to_f.floor(1) / @records.count %>
+      <% if (@this_month.include?(Date.parse(record[:getup_time].to_s))) %>
+        <% @average += (( record.getup_time -  record.sleep_time) / 3600).to_f.floor(1) / @this_month_record.values.first  %>
+      <% end %>
     <% end %>
-    <p>あなたの平均睡眠時間は<span class="average-time"><%= @average.to_f.floor(1) %></span>時間です</p>
+    <p>今月の平均睡眠時間は<span class="average-time"><%= @average.to_f.floor(1) %></span>時間です</p>
     <% if @records.count > 10 || @average < 5.0 %>
-    <%= image_tag '/images/default.png', alt: "子供睡眠不足" %>
-    <p><span class="image_explanation">睡眠時間が短いようです</span><p>
+      <%= image_tag '/images/default.png', alt: "子供睡眠不足" %>
+      <p><span class="image_explanation">睡眠時間が短いようです</span><p>
     <% elsif @records.count > 10 || @average > 5.0 %>
-    <%= image_tag '', alt: "子供元気な画像" %>
-    <p><span class="image_explanation">しっかり睡眠が取れています♪</span><p>
+      <%= image_tag '', alt: "子供元気な画像" %>
+      <p><span class="image_explanation">しっかり睡眠が取れています♪</span><p>
     <% elsif @records.count > 20 || @average < 5.0 %>
-    <%= image_tag '', alt: "大人睡眠不足画像" %>
-    <p><span class="image_explanation">睡眠時間が短いようです</span><p>
+      <%= image_tag '', alt: "大人睡眠不足画像" %>
+      <p><span class="image_explanation">睡眠時間が短いようです</span><p>
     <% elsif @records.count > 20 || @average > 5.0 %>
-    <%= image_tag '', alt: "ダンディおじさん画像" %>
-    <p><span class="image_explanation">パーフェクト!!</span><p>
+      <%= image_tag '', alt: "ダンディおじさん画像" %>
+      <p><span class="image_explanation">パーフェクト!!</span><p>
     <% elsif @records.count < 10 || @average < 5.0 %>
-    <%= image_tag '', alt: "赤ちゃん睡眠不足画像" %>
-    <p><span class="image_explanation">睡眠時間が短いようです</span><p>
+      <%= image_tag '', alt: "赤ちゃん睡眠不足画像" %>
+      <p><span class="image_explanation">睡眠時間が短いようです</span><p>
     <% else %>
-    <%= image_tag '/images/default.png' %>
-    <p><span class="image_explanation">記録した回数や睡眠時間で</br>キャラクターが変化するよ！</span><p>
+      <%= image_tag '/images/default.png' %>
+      <p><span class="image_explanation">記録した回数や睡眠時間で</br>キャラクターが変化するよ！</span><p>
     <% end %>
   </div>
 </div>
