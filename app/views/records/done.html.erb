@@ -9,7 +9,7 @@
 <h1>睡眠記録</h1>
   <% if @records.empty? %>
     <div class="no-record ">
-    <h1>まだ記録がありません</h1>
+    <h1 class="text-align">記録がありません</h1>
     <%= link_to "記録を始める", form1_records_path, class: "btn btn-lg btn-index" %>
     </div>
   <% else %>
