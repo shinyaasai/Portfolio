@@ -2,6 +2,7 @@
   <div class="fixed-bottom">
     <div class="container ">
       <span class="logo-name" id="logo">SleepApp</span>
+      <%= image_tag '/images/suimin_icon.png', class: "logo_image_size" %>
       <% if request.path == done_records_path %>
         <div class="dreams_path_position">
           <%= link_to "みんなが投稿した夢の記録をみてみよう！", dreams_path, class: "dream_index_link" %>
