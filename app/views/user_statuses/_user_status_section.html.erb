@@ -1,33 +1,34 @@
 <div class= "user_status_section">
-  <p>今月の平均睡眠時間は<span class="average-time"><%= average.to_f.floor(1) %></span>時間です</p>
+  <p>今週の平均睡眠時間は<span class="average-time"><%= average.to_f.floor(1) %></span>時間です</p>
   <% if this_month_record.values.first.nil? %>
   <%= image_tag '/images/akachan_default.png' %>
+  <p><span class="image_explanation">今週の記録がありません</span><p>
   <p><span class="image_explanation">記録した回数や睡眠時間で</br>キャラクターが変化するよ！</span><p>
-  <% elsif this_month_record.values.first == 7 && average < 5.0 %>
+  <% elsif this_month_record.values.first == 7 && average < 6.0 %>
     <%= image_tag '', alt: "おじいちゃん睡眠不足" %>
     <p><span class="image_explanation">睡眠時間が短いようです</span><p>
-  <% elsif this_month_record.values.first == 7  && average > 5.0 %>
+  <% elsif this_month_record.values.first == 7  && average > 6.0 %>
     <%= image_tag '', alt: "おじいちゃん元気な画像" %>
     <p><span class="image_explanation">しっかり睡眠が取れています♪</span><p>
-  <% elsif this_month_record.values.first > 5 && average < 5.0 %>
-    <%= image_tag '', alt: "大人睡眠不足画像" %>
+  <% elsif this_month_record.values.first >= 5 && average < 6.0 %>
+    <%= image_tag '/images/office_worker_lack_of_sleep.png', alt: "大人睡眠不足画像" %>
     <p><span class="image_explanation">睡眠時間が短いようです</span><p>
-  <% elsif this_month_record.values.first > 5 && average > 5.0 %>
+  <% elsif this_month_record.values.first >= 5 && average > 6.0 %>
     <%= image_tag '/images/office_worker_default.png', alt: "大人元気な画像" %>
     <p><span class="image_explanation">しっかり睡眠時間が取れています♪</span><p>
-  <% elsif this_month_record.values.first > 4 && average > 5.0 %>
+  <% elsif this_month_record.values.first >=3 && average > 6.0 %>
     <%= image_tag '/images/student1_default.png', alt: "高校生元気な画像" %>
     <p><span class="image_explanation">しっかり睡眠が取れています♪</span><p>
-  <% elsif this_month_record.values.first > 4 && average < 5.0 %>
+  <% elsif this_month_record.values.first >=3 && average < 6.0 %>
     <%= image_tag '/images/student1_lack_of_sleep.png', alt: "高校生睡眠不足画像" %>
   <p><span class="image_explanation">睡眠時間が短いようです</span><p>
-  <% elsif this_month_record.values.first > 2 && average < 5.0 %>
+  <% elsif this_month_record.values.first == 2 && average < 6.0 %>
     <%= image_tag '/images/child1_lack_of_sleep.png', alt: "子供睡眠不足画像" %>
     <p><span class="image_explanation">睡眠時間が短いようです</span><p>
-  <% elsif this_month_record.values.first > 2 && average > 5.0 %>
+  <% elsif this_month_record.values.first == 2 && average > 6.0 %>
     <%= image_tag '/images/child1_default.png', alt: "子供元気な画像" %>
     <p><span class="image_explanation">しっかり睡眠が取れています</span><p>
-  <% elsif this_month_record.values.first <= 2 && average < 5.0 %>
+  <% elsif this_month_record.values.first < 2 && average < 6.0 %>
     <%= image_tag '/images/akachan_lack_of_sleep.png', alt: "赤ちゃん睡眠不足画像" %>
     <p><span class="image_explanation">睡眠時間が短いようです</span><p>
   <% else %>
