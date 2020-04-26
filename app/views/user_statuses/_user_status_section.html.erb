@@ -13,7 +13,7 @@
     <%= image_tag '', alt: "ダンディおじさん画像" %>
     <p><span class="image_explanation">パーフェクト!!</span><p>
   <% elsif this_month_record.values.first < 10 && average < 5.0 %>
-    <%= image_tag '', alt: "赤ちゃん睡眠不足画像" %>
+    <%= image_tag '/images/akachan_lack_of_sleep.png', alt: "赤ちゃん睡眠不足画像" %>
     <p><span class="image_explanation">睡眠時間が短いようです</span><p>
   <% else %>
     <%= image_tag '/images/default.png' %>
