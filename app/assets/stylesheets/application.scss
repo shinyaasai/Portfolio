@@ -583,6 +583,9 @@ label{
   .card-header{
     font-size: 1.5rem
   }
+  .date-font-size{
+    font-size: 1.0rem;
+  }
 }
 
 // 夢の詳細ページ
@@ -774,6 +777,9 @@ label{
     .card-header{
       font-size: 1.2rem;
       font-weight: bold;
+      .date-font-size{
+        font-size: 0.8rem;
+      }
     }
     .card-body{font-size: 0.8rem}
   }
