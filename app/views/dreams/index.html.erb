@@ -1,7 +1,7 @@
 <% provide(:title, "夢の記録") %>
 <div class="dream-index">
   <div class="dream-index-title d-flex">
-    <h1>夢の記録一覧</h1>
+    <h1>みんなの夢の記録</h1>
     <%= form_tag dreams_path, method: :get, class: 'dreams_searchform ml-auto' do %>
     <%= select_tag :tag_id,
     options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
