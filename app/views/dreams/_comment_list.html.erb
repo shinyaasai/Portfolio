@@ -1,9 +1,7 @@
 <div class="comment_item mb-2">
   <% record.comments.each do |comment| %>
     <span>
-      <strong>
-        <%= comment.user.user_name %>
-      </strong>
+      <strong><%= comment.user.user_name %></strong>
     </span>
     <span class="comment_font_size"><%= comment.comment %></span>
     <div class="comment_bottomline">

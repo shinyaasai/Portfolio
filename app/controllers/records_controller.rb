@@ -5,6 +5,7 @@ class RecordsController < ApplicationController
   before_action :validates_form1, only: :form2
   before_action :validates_form2, only: :form3
   before_action :validates_form3, only: :form4
+  
   def done
     @records = Record.where(user_id: current_user.id).page(params[:page]).search(params[:search]).order(getup_time: :desc)
     @average = 0
@@ -13,20 +14,7 @@ class RecordsController < ApplicationController
   def form1
     @record = Record.new(user_id: current_user.id)
   end
-  def form3
-    session["getup_time(1i)"] = record_params["getup_time(1i)"]
-    session["getup_time(2i)"] = record_params["getup_time(2i)"]
-    session["getup_time(3i)"] = record_params["getup_time(3i)"]
-    session["getup_time(4i)"] = record_params["getup_time(4i)"]
-    session["getup_time(5i)"] = record_params["getup_time(5i)"]
-    session[:getout] = record_params[:getout]
-    session[:sun] = record_params[:sun]
-    @record = Record.new(user_id: current_user.id)
-  end
-  def form4
-    session[:sleepiness] = record_params[:sleepiness]
-    @record = Record.new(user_id: current_user.id)
-  end
+
   def form2
     session["sleep_time(1i)"] = record_params["sleep_time(1i)"]
     session["sleep_time(2i)"] = record_params["sleep_time(2i)"]
@@ -37,6 +25,23 @@ class RecordsController < ApplicationController
     session[:awakening] = record_params[:awakening]
     @record = Record.new(user_id: current_user.id)
   end
+
+  def form3
+    session["getup_time(1i)"] = record_params["getup_time(1i)"]
+    session["getup_time(2i)"] = record_params["getup_time(2i)"]
+    session["getup_time(3i)"] = record_params["getup_time(3i)"]
+    session["getup_time(4i)"] = record_params["getup_time(4i)"]
+    session["getup_time(5i)"] = record_params["getup_time(5i)"]
+    session[:getout] = record_params[:getout]
+    session[:sun] = record_params[:sun]
+    @record = Record.new(user_id: current_user.id)
+  end
+
+  def form4
+    session[:sleepiness] = record_params[:sleepiness]
+    @record = Record.new(user_id: current_user.id)
+  end
+
 
   def show
   end
@@ -65,7 +70,7 @@ class RecordsController < ApplicationController
     record.user_id = current_user.id
     if record.save
       flash[:notice] = "登録しました"
-      redirect_to record
+      redirect_to user_statuses_home_path
     else
       redirect_to done_records_path
     end

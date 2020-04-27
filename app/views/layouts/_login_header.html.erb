@@ -1,12 +1,11 @@
 <header>
   <nav  class="navbar fixed-top navbar-dark navbar-expand-md">
   <div class="container">
-    <span class="user-name"><%= current_user.user_name%>さん</span>
+    <%=link_to "#{current_user.user_name}さん", user_statuses_home_path, class: "user_name" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-
       <!--パソコン表示-->
       <ul class="nav navbar-nav pc">
         <li class="nav-item active"><%= link_to form1_records_path do %>
@@ -30,16 +29,14 @@
             <span class="icon-explanation">ログアウト</span>
         </li>
       </ul>
-
       <!--スマホ表示-->
       <ul class="nav navbar-nav sp">
         <li class="nav-item active"><%= link_to "記録する", form1_records_path %> </li>
-        <li class="nav-item"><%= link_to "一覧をみる", done_records_path %></li>
+        <li class="nav-item"><%= link_to "睡眠記録", done_records_path %></li>
         <li class="nav-item"><%= link_to "みんなの夢の記録", dreams_path %></li>
         <li class="nav-item"><%= link_to "アカウント編集", edit_user_registration_path %></li>
         <li class="nav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
       </ul>
-
     </div>
   </div>
   </nav>

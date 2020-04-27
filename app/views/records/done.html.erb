@@ -1,9 +1,4 @@
 <% provide(:title, "睡眠記録") %>
-<% @records.each do |record| %>
-  <% @average += (( record.getup_time -  record.sleep_time) / 3600).to_f.floor(1) / @records.count %>
-<% end %>
-<p>あなたの平均睡眠時間は<span class="average-time"><%= @average.to_f.floor(1) %></span>時間です</p>
-
 <%= form_with url: done_records_path, method: :get, local: true do |f| %>
 <div class="serch-form center" %>
   <%= f.date_field :search %>
@@ -14,7 +9,7 @@
 <h1>睡眠記録</h1>
   <% if @records.empty? %>
     <div class="no-record ">
-    <h1>まだ記録がありません</h1>
+    <h1 class="text-align">記録がありません</h1>
     <%= link_to "記録を始める", form1_records_path, class: "btn btn-lg btn-index" %>
     </div>
   <% else %>

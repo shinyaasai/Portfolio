@@ -24,8 +24,7 @@
     max-width: 960px;
   }
 }
-html{
-}
+
  body{
   padding-top: 70px;
   background-image: url("/images/hoshizora.png");
@@ -116,6 +115,11 @@ a{
   color: #FFF;
 }
 
+a:hover {
+  text-decoration: none;
+  color: #FFF;
+        }
+
 label{
   color: #FFF;
   margin: 10px 0;
@@ -127,8 +131,6 @@ label{
     color: red;
   }
 }
-
-
 // 記録ページのラベル
 .record-label{
   width: 340px;
@@ -143,27 +145,16 @@ label{
   text-shadow: 0 0 6px #0000ff,0 0 9px #fff;
   }
 
-
-
-
 .btn{
   color: #ffffff;
   font-weight: bold;
   border-radius: 8px;
 }
-
-
-// .row{
-//     margin-top: px;
-// }
-
-
 // ラベルテキスト
 .label-text{
   color: #FFF;
   text-shadow: 0 0 5px #01033e,0 0 10px #fff;
 }
-
 // トップページのコンテンツ
 .top-wrapper{
     width: 250px;
@@ -196,16 +187,21 @@ footer{
     text-shadow: 0 0 5px #01033e,0 0 10px #fff;
     box-shadow: 0px -3px 7px -4px #FFF;
     font-family: 'M PLUS 1p', sans-serif;
-    }
-  #logo {
-    text-align: center;
-    margin-right: 10px;
-    font-size: 2.0em;
-    color: #fff;
-    letter-spacing: -1px;
-    font-weight: bold;
   }
+}
 
+.logo_image_size{
+  height: 40px;
+  width:40px;
+  margin-bottom: 10px;
+}
+  #logo {
+    font-size: 2em;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #FFF;
+  	text-shadow: 0 0 8px #fff;
+  }
   #logo:hover {
     color: #fff;
     text-decoration: none;
@@ -227,18 +223,18 @@ footer{
     color: #fff;
     text-decoration: none;
   }
-}
 
 .nav-item{
   text-align: center;
   text-decoration: none;
 }
 
-.user-name{
+.user_name{
   font-size: 2.0em;
   letter-spacing: -1px;
   font-weight: bold;
   color: #FFF;
+  text-decoration: none;
   text-shadow: 0 0 5px #01033e,0 0 10px #fff;
 }
 
@@ -255,10 +251,10 @@ i {
 }
 
 li {
-    margin-left: 20px;
-    a{
-      color: #FFF;
-    }
+  margin-left: 20px;
+  a{
+    color: #FFF;
+  }
 }
 
 // トップページのボタン
@@ -286,7 +282,7 @@ li {
 #login .container #login-row #login-column #login-box {
   margin-top: 40px;
   max-width: 600px;
-  height: 320px;
+  height: 350px;
   border: 1px solid #9C9C9C;
   background-color: #092b61;
 }
@@ -448,6 +444,8 @@ label{
     color: #FFF;
      text-shadow: 0 0 5px #0000ff,0 0 8px #fff;
   }
+  .text-align{ text-align: center; }
+  .btn-index{margin-top: 30px;}
 }
 .record{
   h1{
@@ -686,9 +684,11 @@ label{
             margin-top: 7px;
             padding: 3px 6px;
   }
-.record-form1{
-
+.sleep_record_index{
+  h1{font-size: 2.0rem;}
+  .font-align{text-align: center;}
 }
+
  .record-label{
               padding: 0;
               margin: 15px 60px 0 0;
