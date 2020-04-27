@@ -19,5 +19,4 @@ module ApplicationHelper
       "danger"
     end
   end
-
 end

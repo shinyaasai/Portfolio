@@ -7,8 +7,6 @@ class DreamPostsController < ApplicationController
     if @dream_post.save
       respond_to :js
     end
-
-
   end
 
   def destroy
@@ -17,7 +15,6 @@ class DreamPostsController < ApplicationController
     if @dream_post.destroy
       respond_to :js
     end
-
   end
 
     private
