@@ -5,7 +5,7 @@ class RecordsController < ApplicationController
   before_action :validates_form1, only: :form2
   before_action :validates_form2, only: :form3
   before_action :validates_form3, only: :form4
-  
+
   def done
     @records = Record.where(user_id: current_user.id).page(params[:page]).search(params[:search]).order(getup_time: :desc)
     @average = 0
@@ -161,7 +161,7 @@ class RecordsController < ApplicationController
         "sleep_time(1i)": '2020',
         "sleep_time(2i)": '03',
         "sleep_time(3i)": '23',
-      "sleep_time(4i)": '00',
+        "sleep_time(4i)": '00',
         "sleep_time(5i)": '00',
         sun: session[:sun],
         getout: session[:getout],
