@@ -16,14 +16,16 @@
     <span class="badge badge-primary"><%= tag.name %></span>
     <% end %>
   </div>
-  <div class="card-body">
-    <% if record.memo.empty? %>
+<div class="card-body">
+  <% if record.memo.empty? %>
     <h6>記録がありません</h6>
+    <p class="text-right font-weight-bold mr-10">
     <%= link_to "みんなの夢を見てみよう！", dreams_path %>
-    <% else %>
+    </p>
+  <% else %>
     <p class="card-text"><%= truncate(record.memo, length: 80) %></p>
     <p class="text-right font-weight-bold mr-10">
-      <%= link_to "みんなの夢を見てみよう！", dreams_path %>
-    </div>
-    <% end %>
-  </div>
+    <%= link_to "みんなの夢を見てみよう！", dreams_path %>
+    </p>
+  <% end %>
+</div>
