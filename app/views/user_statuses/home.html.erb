@@ -1,8 +1,8 @@
 <div class="image_box center mt-5">
   <% @records.each do |record| %>
     <% if (@this_month.include?(Date.parse(record[:getup_time].to_s))) %>
-      <% @average += (( record.getup_time -  record.sleep_time) / 3600).to_f.floor(1) / @this_month_record.values.first  %>
+      <% @average += (( record.getup_time - record.sleep_time) / 3600).to_f.floor(1) / @this_month_record.values.first %>
     <% end %>
   <% end %>
-  <%= render 'user_status_section', average: @average, this_month_record: @this_month_record  %>
+  <%= render 'user_status_section', average: @average, this_month_record: @this_month_record %>
 </div>

@@ -1,7 +1,6 @@
 class DreamsController < ApplicationController
   def index
-    @records = params[:tag_id].present? ? Tag.find(params[:tag_id]).records : Record.all
-    @records = @records.page(params[:page])
+    @records = params[:tag_id].present? ? Tag.find(params[:tag_id]).records : Record.all.order(getup_time: :desc)
   end
 
   def show

@@ -19,11 +19,6 @@
  @import 'font-awesome';
  @import url('https://fonts.googleapis.com/css?family=M+PLUS+1p');
 
- @media (min-width: 1200px) {
-  .container {
-    max-width: 960px;
-  }
-}
 
  body{
   padding-top: 70px;
@@ -49,9 +44,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 5em;
   letter-spacing: -2px;
-  margin: 30px 0 120px 0;
+  margin: 30px 0 60px 0;
   text-align: center;
   color: #FFF;
 	text-shadow: 0 0 10px #0000ff,0 0 15px #fff;
@@ -123,6 +118,43 @@ a:hover {
 label{
   color: #FFF;
   margin: 10px 0;
+}
+
+.top-main-wrapper {
+  h1 {
+    font-size: 10em;
+    font-weight: bold;
+    letter-spacing: -2px;
+    margin: 60px 0 120px 0;
+    text-align: center;
+    color: #FFF;
+  	text-shadow: 0 0 10px #0000ff,0 0 15px #fff;
+  }
+
+  .sub-text-wrapper{
+    p{
+      text-align: left;
+      padding: 0 20px;
+    }
+    span{
+      font-weight: bold;
+    }
+  }
+}
+.sample-display-box{
+  img{
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 3px 10px 0px  #FFF;
+  }
+  p{
+    font-size: 1.3em;
+    letter-spacing: -2px;
+    margin: 20px 0 10px 0;
+    text-align: center;
+    color: #FFF;
+  	text-shadow: 0 0 10px #0000ff,0 0 6px #fff;
+  }
 }
 
 // deviseエラーメッセージ
@@ -298,7 +330,7 @@ li {
 #signup .container #signup-row #signup-column #signup-box {
   margin-top: 40px;
   max-width: 600px;
-  height: 480px;
+  height: 530px;
   border: 1px solid #9C9C9C;
   background-color: #092b61;
 }
@@ -559,6 +591,7 @@ label{
   .dream-index-title{
     margin: 20px 0;
     h1{
+      font-size: 3em;
       margin: 0;
       text-align: center;
     }
@@ -572,6 +605,9 @@ label{
   }
   .card-header{
     font-size: 1.5rem
+  }
+  .date-font-size{
+    font-size: 1.0rem;
   }
 }
 
@@ -628,7 +664,7 @@ label{
 .sp { display: block !important; }
 
  h1{
-   font-size: 1.6rem;
+   font-size: 3em;
    margin: 15px 0 7px 0;
    letter-spacing: -2px;
    text-align: left;
@@ -661,6 +697,35 @@ label{
 
  #login .container #login-row #login-column #login-box {
    margin: 20px 0;
+ }
+
+ .top-main-wrapper {
+   h1 {
+     font-size: 4em;
+     letter-spacing: -2px;
+     margin: 60px 0 120px 0;
+     text-align: center;
+     color: #FFF;
+   	text-shadow: 0 0 10px #0000ff,0 0 15px #fff;
+   }
+   p{
+     margin-bottom: 0;
+   }
+   .btn-top{
+     font-size: 10px;
+   }
+ }
+
+ .sample-display-box{
+   p{
+     font-size: 1.0em;
+     letter-spacing: -1px;
+     padding: 0 10px;
+     margin: 15px 0 10px 0;
+     text-align: center;
+     color: #FFF;
+   	text-shadow: 0 0 10px #0000ff,0 0 4px #fff;
+   }
  }
 
  .table{
@@ -754,19 +819,24 @@ label{
   }
 
   .dream-index{
-    h1{font-size: 1.5rem;}
+    .dream-index-title{
+      h1{font-size: 1.5em;}
+   }
     .dreams_select{
-                  font-size: 0.6rem;
-                  padding: 3px 6px;
+      font-size: 0.6rem;
+      padding: 3px 6px;
     }
     .card-header{
-                  font-size: 1.2rem;
-                  font-weight: bold;
+      font-size: 1.2rem;
+      font-weight: bold;
+      .date-font-size{
+        font-size: 0.8rem;
+      }
     }
     .card-body{font-size: 0.8rem}
   }
 
-  .dream-detail{
+    .dream-detail{
     .card-header{font-size: 1.5rem;
       span{font-size: 1.0rem;}
     }
