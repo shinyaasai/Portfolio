@@ -1,7 +1,7 @@
 <footer class="pt-5">
   <div class="fixed-bottom">
     <div class="container ">
-      <span class="logo-name" id="logo">SleepApp</span>
+      <span class="logo-name" id="logo"><%= link_to "SleepApp", "/" %></span>
       <%= image_tag '/images/suimin_icon.png', class: "logo_image_size" %>
       <% if request.path == done_records_path %>
         <div class="dreams_path_position">

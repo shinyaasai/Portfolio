@@ -1,5 +1,6 @@
 class UserStatusesController < ApplicationController
   before_action :authenticate_user!
+  
   def home
     @records = current_user.records
     @average = 0
