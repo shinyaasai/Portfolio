@@ -2,9 +2,9 @@ class Record < ApplicationRecord
   require 'date'
   belongs_to :user
   has_one :dream_post, dependent: :destroy
-  has_many :record_tag_relations, dependent: :destroy
+  has_many :record_tag_relations, dependent: :delete_all
   has_many :tags, through: :record_tag_relations
-  has_many :comments, dependent: :destroy
+  has_many :comments, dependent: :delete_all
 
   validates :getup_time, presence: true
   validates :sleep_time, presence: true

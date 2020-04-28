@@ -1,5 +1,5 @@
 <% records.each do |dream| %>
-  <% if dream.dream_post.present? %>
+  <% if dream.dream_post.present?%>
     <div class="card">
       <div class="card-header font-weight-bold">
         <%= dream.user.user_name%>
@@ -11,7 +11,7 @@
       <div class="card-body text-left">
         <% if dream.memo.size < 80 %>
           <%= dream.memo %>
-          <%= link_to "コメントをする", dream_path(dream.id) %>
+            <%= link_to "コメントをする", dream_path(dream.id) %>
         <% else %>
           <%= truncate(dream.memo, length: 80) do %>
             <%= link_to "続きを見る", dream_path(dream.id) %>
