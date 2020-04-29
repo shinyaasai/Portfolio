@@ -52,7 +52,7 @@ RSpec.describe "Records", type: :system do
     end
 
     it "ページが正しく表示される" do
-      expect(page).to have_content "睡眠記録"
+      expect(current_path).to have_content "睡眠記録"
     end
 
     it "footerが正しく表示される" do

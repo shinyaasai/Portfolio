@@ -11,7 +11,7 @@ FactoryBot.define do
     association :user, factory: :user
   end
 
-  factory :record2 do
+  factory :other_record, class:Record do
     getup_time Time.current
     sleep_time Time.current
     medicine "飲んだ"
@@ -20,5 +20,6 @@ FactoryBot.define do
     sun "浴びた"
     sleepiness "元気に過ごせた"
     memo "テスト"
+    association :user, factory: :other_user
   end
 end
