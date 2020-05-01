@@ -1,27 +1,26 @@
 require 'rails_helper'
 
 RSpec.describe "User_Statuses", type: :system do
-
   describe "全ユーザー共通のテスト" do
-  let(:user) { create(:user) }
-  let(:other_user) { create(:other_user) }
+    let(:user) { create(:user) }
+    let(:other_user) { create(:other_user) }
 
-  before do
-  visit root_path
-  click_link "ログイン"
-  fill_in "メールアドレス", with: user.email
-  fill_in "パスワード", with: user.password
-  click_button "ログイン"
-  end
+    before do
+      visit root_path
+      click_link "ログイン"
+      fill_in "メールアドレス", with: user.email
+      fill_in "パスワード", with: user.password
+      click_button "ログイン"
+    end
 
-   it "ログイン後ログインしましたと表示されること" do
-     expect(page).to have_content "ログインしました"
-   end
+    it "ログイン後ログインしましたと表示されること" do
+      expect(page).to have_content "ログインしました"
+    end
 
-   it "ヘッダーにログインユーザーの名前が表示されること" do
-     expect(page).to have_content "#{user.user_name}"
-     expect(page).not_to have_content "#{other_user.user_name}"
-   end
+    it "ヘッダーにログインユーザーの名前が表示されること" do
+      expect(page).to have_content "#{user.user_name}"
+      expect(page).not_to have_content "#{other_user.user_name}"
+    end
   end
 
   describe "ユーザーに今週の睡眠記録があるテスト" do
@@ -55,11 +54,11 @@ RSpec.describe "User_Statuses", type: :system do
     let(:no_record_user) { create(:no_record_user) }
 
     before do
-    visit root_path
-    click_link "ログイン"
-    fill_in "メールアドレス", with: no_record_user.email
-    fill_in "パスワード", with: no_record_user.password
-    click_button "ログイン"
+      visit root_path
+      click_link "ログイン"
+      fill_in "メールアドレス", with: no_record_user.email
+      fill_in "パスワード", with: no_record_user.password
+      click_button "ログイン"
     end
 
     it "記録がありませんと表示されること" do

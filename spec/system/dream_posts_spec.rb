@@ -12,14 +12,14 @@ RSpec.describe "Dream_posts" do
     visit record_path(record.id)
     click_on "投稿する"
   end
-  context "コメントを投稿した場合" do
 
+  context "コメントを投稿した場合" do
     it "投稿ボタンが投稿削除ボタンに切り替わる", js: true do
       expect(page).to have_link "投稿を取り消す"
     end
   end
-  context "コメントを削除した場合" do
 
+  context "コメントを削除した場合" do
     it "投稿削除ボタンが投稿ボタンに切り替わる", js: true do
       click_on "投稿を取り消す"
       expect(page).to have_link "投稿する"

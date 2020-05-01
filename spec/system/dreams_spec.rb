@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Dreams" do
   let(:record) { create(:record) }
-  let(:other_user_record) { create(:other_record)}
+  let(:other_user_record) { create(:other_record) }
 
   before do
     visit root_path
@@ -12,19 +12,20 @@ RSpec.describe "Dreams" do
     click_button "ログイン"
     visit record_path(record.id)
   end
-  context "投稿されていない夢の記録の場合" do
 
+  context "投稿されていない夢の記録の場合" do
     it "夢の記録は表示されないこと" do
       visit dreams_path
       expect(page).not_to have_content "#{record.memo}"
     end
   end
+
   context "投稿された夢の記録がある場合" do
     before do
       click_on "投稿する"
       visit dreams_path
     end
-    
+
     it "夢の記録が表示されること" do
       expect(page).to have_content "#{record.memo}"
     end

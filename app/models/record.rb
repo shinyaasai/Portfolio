@@ -16,16 +16,17 @@ class Record < ApplicationRecord
   validate  :sleep_time_not_after_day
   validate  :getup_time_not_after_day
 
-  enum medicine:  { 飲んだ: 1, 飲んでいない: 2  }
+  enum medicine:  { 飲んだ: 1, 飲んでいない: 2 }
   enum awakening: { 起きた: 1, 起きていない: 2 }
-  enum getout: { １０分: 1, ２０分: 2, ３０分: 3,  ４０分: 4, ５０分: 5,
+  enum getout: {
+    １０分: 1, ２０分: 2, ３０分: 3, ４０分: 4, ５０分: 5,
     ６０分: 6, ６０分以上: 7,
   }
   enum sun: { 浴びた: 1, 浴びていない: 2 }
   enum sleepiness: { 元気に過ごせた: 1, 少し眠気があった: 2, １日中眠気があった: 3 }
 
   scope :getup_time_this_week, -> { where(getup_time: Time.current.beginning_of_week..Time.current.end_of_week).group('WEEK(getup_time)').count }
-  
+
   def self.search(search)
     if search
       Record.where(['getup_time LIKE ?', "%#{search}%"])
@@ -46,5 +47,4 @@ class Record < ApplicationRecord
   def dream_post_by(user)
     DreamPost.find_by(user_id: user.id, record_id: id)
   end
-
 end
