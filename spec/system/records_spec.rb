@@ -9,9 +9,8 @@ RSpec.describe "Records", type: :system do
     fill_in "メールアドレス", with: user.email
     fill_in "パスワード", with: user.password
     click_button "ログイン"
+    find('.fa-edit').click
     expect {
-      find(".fa-edit").click
-      expect(page).to have_content '寝た時のこと'
       select "1", from: 'record[sleep_time(2i)]'
       select "1", from: 'record[sleep_time(3i)]'
       select "11", from: 'record[sleep_time(4i)]'
@@ -19,8 +18,6 @@ RSpec.describe "Records", type: :system do
       select '飲んだ', from: '寝るための薬は飲みましたか？'
       select '起きた', from: '途中で目が覚めた?'
       click_button "次へ"
-
-      expect(page).to have_content "朝のこと"
       select "1", from: 'record[getup_time(2i)]'
       select "1", from: 'record[getup_time(3i)]'
       select "11", from: 'record[getup_time(4i)]'
@@ -28,19 +25,15 @@ RSpec.describe "Records", type: :system do
       select '１０分', from: 'どのくらいで布団から出た？'
       select '浴びた', from: '朝日を浴びた？'
       click_button "次へ"
-
-      expect(page).to have_content "昼のこと"
       select '元気に過ごせた', from: '元気に過ごせた？'
       click_button "次へ"
-
-      expect(page).to have_content "夢日記"
       fill_in '夢を記録しよう', with: 'テスト'
       click_button "登録"
-    }.to change(user.records, :count).by(1)
+    }.to change(user.records, :count).by(2)
     expect(page).to have_content '登録しました'
   end
 
-  describe "睡眠記録一覧ページ" do
+  describe "睡眠記録一覧ページのテスト" do
     let(:record) { create(:record) }
 
     before do
@@ -49,34 +42,32 @@ RSpec.describe "Records", type: :system do
       fill_in "メールアドレス", with: record.user.email
       fill_in "パスワード", with: record.user.password
       click_button "ログイン"
+      click_on "睡眠記録"
     end
 
-    it "ページが正しく表示される" do
-      expect(current_path).to have_content "睡眠記録"
+    it "ページが正しく表示されること" do
+      expect(page).to have_content "睡眠記録"
     end
 
-    it "footerが正しく表示される" do
+    it "footerが正しく表示されること" do
       within ".footer"
       expect(page).to have_content "みんなが投稿した夢の記録をみてみよう！"
     end
 
-    it "登録した日付が表示される" do
+    it "登録した日付が表示されること" do
       expect(page).to have_content "#{record.sleep_time.to_s(:date_jp)}〜\n#{record.getup_time.to_s(:date_jp)}"
     end
 
-    it "平均睡眠時間が表示される" do
-      expect(page).to have_content (( record.getup_time -  record.sleep_time) / 3600).to_f.floor(1)
-    end
-
-    it "削除ボタンを押すと記録が削除される" do
-      pending 'あとで直す'
-      click_link ("削除")
-      expect(page).to have_content "削除しました"
+    it "削除ボタンを押すと記録が削除されること" do
+      expect {
+        find('a.btn.btn-danger.btn-sp').click
+        expect(page).to have_css("div.center.alert.alert-info", text: "削除しました")
+      }.to change(Record, :count).by(-1)
     end
   end
 
 
-  describe "睡眠記録の詳細ページ" do
+  describe "睡眠記録の詳細ページのテスト" do
     let!(:record) { create(:record) }
 
     before do
@@ -85,7 +76,8 @@ RSpec.describe "Records", type: :system do
       fill_in "メールアドレス", with: record.user.email
       fill_in "パスワード", with: record.user.password
       click_button "ログイン"
-      click_link ("詳細")
+      click_on "睡眠記録"
+      find('a.btn.btn-info.btn-sp').click
     end
 
     it "footerに一覧ページのみで表示するものは表示されないこと" do

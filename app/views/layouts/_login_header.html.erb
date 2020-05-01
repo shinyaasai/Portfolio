@@ -10,23 +10,23 @@
       <ul class="nav navbar-nav pc">
         <li class="nav-item active"><%= link_to form1_records_path do %>
             <i class="far fa-edit fa-2x"></i>
-            <% end %>
             <span class="icon-explanation">記録する</span>
+            <% end %>
         </li>
         <li class="nav-item"><%= link_to done_records_path do %>
             <i class="far fa-list-alt fa-2x"></i>
-            <% end %>
             <span class="icon-explanation">睡眠記録</span>
+            <% end %>
         </li>
         <li class="nav-item"><%= link_to edit_user_registration_path do%>
             <i class="far fa-user fa-2x"></i>
+            <span class="icon-explanation">アカウント</span>
             <% end %>
-              <span class="icon-explanation">アカウント</span>
         </li>
         <li class="nav-item"><%= link_to destroy_user_session_path, method: :delete do %>
             <i class="fas fa-sign-out-alt fa-2x"></i>
-            <% end %>
             <span class="icon-explanation">ログアウト</span>
+            <% end %>
         </li>
       </ul>
       <!--スマホ表示-->
