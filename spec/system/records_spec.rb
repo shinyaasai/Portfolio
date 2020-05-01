@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Records", type: :system do
-
   it "ユーザーは新しく記録を入力することができる" do
     user = create(:user)
     visit root_path
@@ -10,7 +9,7 @@ RSpec.describe "Records", type: :system do
     fill_in "パスワード", with: user.password
     click_button "ログイン"
     find('.fa-edit').click
-    expect {
+    expect do
       select "1", from: 'record[sleep_time(2i)]'
       select "1", from: 'record[sleep_time(3i)]'
       select "11", from: 'record[sleep_time(4i)]'
@@ -29,7 +28,7 @@ RSpec.describe "Records", type: :system do
       click_button "次へ"
       fill_in '夢を記録しよう', with: 'テスト'
       click_button "登録"
-    }.to change(user.records, :count).by(2)
+    end.to change(user.records, :count).by(2)
     expect(page).to have_content '登録しました'
   end
 
@@ -55,17 +54,17 @@ RSpec.describe "Records", type: :system do
     end
 
     it "登録した日付が表示されること" do
-      expect(page).to have_content "#{record.sleep_time.to_s(:date_jp)}〜\n#{record.getup_time.to_s(:date_jp)}"
+      expect(page).to have_content "#{record.sleep_time.to_s(:date_jp)}〜\n
+                                    #{record.getup_time.to_s(:date_jp)}"
     end
 
     it "削除ボタンを押すと記録が削除されること" do
-      expect {
+      expect do
         find('a.btn.btn-danger.btn-sp').click
         expect(page).to have_css("div.center.alert.alert-info", text: "削除しました")
-      }.to change(Record, :count).by(-1)
+      end.to change(Record, :count).by(-1)
     end
   end
-
 
   describe "睡眠記録の詳細ページのテスト" do
     let!(:record) { create(:record) }

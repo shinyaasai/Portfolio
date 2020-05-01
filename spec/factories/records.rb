@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :record do
-    getup_time Time.current
-    sleep_time Time.current
+    getup_time { Time.current }
+    sleep_time { Time.current }
     medicine "飲んだ"
     awakening "起きた"
     getout "１０分"
@@ -11,9 +11,9 @@ FactoryBot.define do
     association :user, factory: :user
   end
 
-  factory :other_record, class:Record do
-    getup_time Time.current
-    sleep_time Time.current
+  factory :other_record, class: Record do
+    getup_time { Time.current }
+    sleep_time { Time.current }
     medicine "飲んだ"
     awakening "起きた"
     getout "１０分"

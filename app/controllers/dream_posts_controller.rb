@@ -17,8 +17,9 @@ class DreamPostsController < ApplicationController
     end
   end
 
-    private
-      def dream_post_params
-        params.permit(:record_id)
-      end
+  private
+
+  def dream_post_params
+    params.permit(:record_id)
+  end
 end

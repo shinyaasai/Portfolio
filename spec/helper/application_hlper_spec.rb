@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe"ApplicationHelper", type: :helper do
+RSpec.describe "ApplicationHelper", type: :helper do
   include ApplicationHelper
   let(:record) { create(:record) }
 
@@ -17,5 +17,4 @@ RSpec.describe"ApplicationHelper", type: :helper do
       end
     end
   end
-
 end

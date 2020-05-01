@@ -5,5 +5,4 @@ class DreamsControllerTest < ActionDispatch::IntegrationTest
     get dreams_index_url
     assert_response :success
   end
-
 end

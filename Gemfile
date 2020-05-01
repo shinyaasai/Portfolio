@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '~> 5.1.6'
 gem 'mysql2'
 gem 'puma', '~> 3.7'
@@ -19,7 +18,7 @@ gem 'kaminari'
 gem 'dotenv-rails'
 
 group :production, :staging do
-    gem 'unicorn', '5.4.1'
+  gem 'unicorn', '5.4.1'
 end
 
 group :development, :test do
@@ -30,6 +29,7 @@ group :development, :test do
   gem 'webdrivers'
   gem 'launchy', '~> 2.4.3'
   gem "factory_bot_rails", "~> 4.10.0"
+  gem 'rubocop-airbnb'
 end
 
 group :development do
