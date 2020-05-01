@@ -1,9 +1,9 @@
 <div class= "user_status_section">
   <p>今週の平均睡眠時間は<span class="average-time"><%= average.to_f.floor(1) %></span>時間です</p>
   <% if this_month_record.values.first.nil? %>
-  <%= image_tag '/images/akachan_default.png' %>
-  <p><span class="image_explanation">今週の記録がありません</span><p>
-  <p><span class="image_explanation">記録した回数や睡眠時間で</br>成長していくよ！</span><p>
+    <%= image_tag '/images/akachan_default.png' %>
+    <p><span class="image_explanation">今週の記録がありません</span><p>
+      <p><span class="image_explanation">記録した回数や睡眠時間で</br>成長していくよ！</span><p>
   <% elsif this_month_record.values.first >= 6 && average < 6.0 %>
     <%= image_tag '/images/grandpa_lack_of_sleep.png', alt: "おじいちゃん睡眠不足" %>
     <p><span class="image_explanation">睡眠不足は様々なリスクを招きます</br>生活習慣を見直しましょう</span><p>
@@ -33,7 +33,7 @@
     <p><span class="image_explanation">睡眠時間が短いようです</span><p>
   <% else %>
     <%= image_tag '/images/akachan_default.png' %>
-    <p><span class="image_explanation">記録した回数や睡眠時間で</br>成長していくよ！</span><p>
+    <p><span class="image_explanation">しっかり睡眠が取れています</span><p>
   <% end %>
   <%= link_to "記録を始める", form1_records_path, class: "btn btn-lg btn-index" %>
 </div>

@@ -4,4 +4,16 @@ FactoryBot.define do
     email "bobsonishandsum@example.com"
     password "bobsonisplaingsoccer"
   end
+
+  factory :other_user, class: User do
+    user_name "ナンシー"
+    email "nansyiscute@example.com"
+    password "nansyisplaingtennis"
+  end
+
+  factory :no_record_user, class: User do
+    user_name "ジョン"
+    email "jonisgood@example.com"
+    password "jonisplaingbaseball"
+  end
 end
