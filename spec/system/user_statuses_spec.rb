@@ -3,14 +3,14 @@ require 'rails_helper'
 RSpec.describe "User_Statuses", type: :system do
 
   describe "全ユーザー共通のテスト" do
-  let(:record) { create(:record) }
-  let(:other_record) { create(:other_record) }
+  let(:user) { create(:user) }
+  let(:other_user) { create(:other_user) }
 
   before do
   visit root_path
   click_link "ログイン"
-  fill_in "メールアドレス", with: record.user.email
-  fill_in "パスワード", with: record.user.password
+  fill_in "メールアドレス", with: user.email
+  fill_in "パスワード", with: user.password
   click_button "ログイン"
   end
 
@@ -19,21 +19,21 @@ RSpec.describe "User_Statuses", type: :system do
    end
 
    it "ヘッダーにログインユーザーの名前が表示されること" do
-     expect(page).to have_content "#{record.user.user_name}"
-     expect(page).not_to have_content "#{other_record.user.user_name}"
+     expect(page).to have_content "#{user.user_name}"
+     expect(page).not_to have_content "#{other_user.user_name}"
    end
   end
 
   describe "ユーザーに今週の睡眠記録があるテスト" do
-    let(:record) { create(:record, sleep_time: Time.current - 7.hours) }
-    let(:other_record) { create(:other_record) }
+    let(:sleep_lot_user) { create(:record, sleep_time: Time.current - 7.hours) }
+    let(:sleep_less_user) { create(:other_record) }
 
     context "平均睡眠時間が６時間以上の場合" do
       it "しっかり睡眠が取れていますと表示される" do
         visit root_path
         click_link "ログイン"
-        fill_in "メールアドレス", with: record.user.email
-        fill_in "パスワード", with: record.user.password
+        fill_in "メールアドレス", with: sleep_lot_user.user.email
+        fill_in "パスワード", with: sleep_lot_user.user.password
         click_button "ログイン"
         expect(page).to have_content "しっかり睡眠が取れています"
       end
@@ -43,8 +43,8 @@ RSpec.describe "User_Statuses", type: :system do
       it "睡眠時間が少ないようですと表示されること" do
         visit root_path
         click_link "ログイン"
-        fill_in "メールアドレス", with: other_record.user.email
-        fill_in "パスワード", with: other_record.user.password
+        fill_in "メールアドレス", with: sleep_less_user.user.email
+        fill_in "パスワード", with: sleep_less_user.user.password
         click_button "ログイン"
         expect(page).to have_content "睡眠時間が短いようです"
       end
