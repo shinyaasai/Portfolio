@@ -24,6 +24,8 @@ class Record < ApplicationRecord
   enum sun: { 浴びた: 1, 浴びていない: 2 }
   enum sleepiness: { 元気に過ごせた: 1, 少し眠気があった: 2, １日中眠気があった: 3 }
 
+  scope :getup_time_this_week, -> { where(getup_time: Time.current.beginning_of_week..Time.current.end_of_week).group('WEEK(getup_time)').count }
+  
   def self.search(search)
     if search
       Record.where(['getup_time LIKE ?', "%#{search}%"])
