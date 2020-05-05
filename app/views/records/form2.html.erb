@@ -4,7 +4,7 @@
   <span><i class="far fa-sun"></i>朝のこと</span>
 </div>
 <%= form_for @record , url: form3_records_path, method: :get do |f| %>
-  <%= f. hidden_field :user_id %>
+  <%= f.hidden_field :user_id %>
   <div class= "form-label">
     <%= f.label :getup_time,"何時に起きた?", class: "control-label label-text" %><br>
     <%= f.datetime_select :getup_time,discard_year:true, use_month_numbers:true, class: "form-control form-control-inline"%></br>

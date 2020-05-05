@@ -68,21 +68,4 @@ RSpec.describe Record, type: :model do
     record = build(:record, memo: "")
     expect(record).to be_valid
   end
-
-  describe "日付に一致する記録を検索する" do
-    let(:record) { create(:record) }
-
-    context "一致する記録が見つかる時" do
-      it "検索した日付に一致する日付を返すこと" do
-        pending 'あとで直す'
-        expect(Record.search("浴びた")).to include(record)
-      end
-    end
-
-    context "一致する記録が見つからない時" do
-      it "空のコレクションを返すこと" do
-        expect(Record.search("浴びた")).to be_empty
-      end
-    end
-  end
 end

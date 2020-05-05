@@ -4,7 +4,7 @@
   <span><i class="far fa-sun"></i>昼のこと</span>
 </div>
 <%= form_for @record , url: form4_records_path, method: :get do |f| %>
-  <%= f. hidden_field :user_id %>
+  <%= f.hidden_field :user_id %>
   <div class= "form-label">
     <%= f.label :sleepiness,"元気に過ごせた？", class: "label-text" %><br>
     <%= f.select :sleepiness, options_for_select(
