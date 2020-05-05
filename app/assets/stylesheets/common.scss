@@ -1,0 +1,104 @@
+body{
+  padding-top: 70px;
+  background-image: url("/images/hoshizora.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'M PLUS 1p', sans-serif;
+}
+
+.center {
+  text-align: center;
+}
+
+.right{
+  text-align: right;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 5em;
+  letter-spacing: -2px;
+  margin: 30px 0 60px 0;
+  text-align: center;
+  color: #FFF;
+	text-shadow: 0 0 10px #0000ff,0 0 15px #fff;
+}
+
+h2 {
+  font-size: 2.0em;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+  font-weight: normal;
+  color: #FFF;
+  text-shadow: 0 0 5px #01033e,0 0 10px #fff;
+}
+
+h3{
+  margin-top: 40px;
+  color: #FFF;
+  text-shadow: 0 0 5px #01033e,0 0 10px #fff;
+}
+
+h4{
+  font-size: 1.1em;
+  line-height: 1.7em;
+  color: #FFF;
+  text-shadow: 0 0 5px #01033e,0 0 10px #fff;
+  margin-top: 200px;
+
+}
+
+h5{
+  margin: 0;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+h6{
+  font-size: 1.5em;
+  line-height: 1.7em;
+  color: #000;
+  opacity: 0.5;
+  margin-top: 10px;
+  text-align: center;
+}
+
+em{
+  color: #FFF;
+}
+
+
+p {
+  font-size: 1.3em;
+  line-height: 1.7em;
+  color: #FFF;
+  text-align: center;
+  margin-top: 30px;
+  text-shadow: 0 0 5px #01033e,0 0 10px #fff;
+
+}
+
+a{
+  color: #FFF;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #FFF;
+        }
+
+label{
+  color: #FFF;
+  margin: 10px 0;
+}
+
+// deviseエラーメッセージ
+#error_explanation{
+  li{
+    color: red;
+  }
+}
