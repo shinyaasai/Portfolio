@@ -1,3 +1,27 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// コメント
+.comment_item{
+  strong{
+    font-size: 2.0em;
+    letter-spacing: -2px;
+    color: #FFF;
+  	text-shadow: 0 0 3px #0000ff,0 0 7px #fff;
+    margin-right: 10px;
+  }
+  .comment_font_size{
+    color: #FFF
+  }
+  .comment_bottomline{
+    text-align: right;
+    border-bottom: 2px solid #dfdfdf;
+  }
+  .comment_update_time{
+    color: #c0c0c0;
+  }
+  .delete-comment{
+    color: red;
+  }
+}

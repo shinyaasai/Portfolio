@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Dreams" do
-  let(:record) { create(:record) }
+  let(:record) { create(:record, memo: "a" * 81) }
   let(:other_user_record) { create(:other_record) }
 
   before do
@@ -33,6 +33,10 @@ RSpec.describe "Dreams" do
     it "投稿された記録に本人のユーザーネームが表示されていること" do
       expect(page).to have_content "#{record.user.user_name}"
       expect(page).not_to have_content "#{other_user_record.user.user_name}"
+    end
+
+    it "テキストが80文字を超えたら(続きを見る)と表示されること" do
+      expect(page).to have_content "続きを見る"
     end
   end
 end
