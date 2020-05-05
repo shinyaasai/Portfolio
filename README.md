@@ -7,7 +7,7 @@
 
 [URL] (https://www.sleepapp.xyz)
 
-こちらでログイン下さい
+こちらでログインお願い致します
 * email: sleepapp@example.com
 * password: sleepapp
 
