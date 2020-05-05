@@ -5,6 +5,12 @@
 投稿した夢の記録を他のユーザーと共有出来るなどユーザーが
 楽しみながら記録を付けることを意識して作成しました。
 
+[URL] (https://www.sleepapp.xyz)
+
+こちらでログイン下さい
+* email: sleepapp@example.com
+* password: sleepapp
+
 
 # 機能
 
